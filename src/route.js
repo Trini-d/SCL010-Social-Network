@@ -4,6 +4,11 @@ import { templateCreate } from './assets/views/templateCreate.js';
 
 /* changeRouter llama a la función que carga cada template */
 const changeRouter = (hash) => {
+  console.log(typeof(hash));
+  console.log(hash);
+  if(hash === ''){
+    return showTemplate('#/create');
+  }
   if (hash === '#/login') {
     return showTemplate(hash);
   }

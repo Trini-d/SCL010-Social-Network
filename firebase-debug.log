@@ -1,0 +1,29 @@
+[debug] [2019-08-07T20:06:57.001Z] ----------------------------------------------------------------------
+[debug] [2019-08-07T20:06:57.004Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2019-08-07T20:06:57.004Z] CLI Version:   7.2.2
+[debug] [2019-08-07T20:06:57.004Z] Platform:      darwin
+[debug] [2019-08-07T20:06:57.004Z] Node Version:  v10.16.0
+[debug] [2019-08-07T20:06:57.005Z] Time:          Wed Aug 07 2019 16:06:57 GMT-0400 (GMT-04:00)
+[debug] [2019-08-07T20:06:57.005Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-07T20:06:57.014Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-07T20:06:57.014Z] > authorizing via signed-in user
+[debug] [2019-08-07T20:06:57.014Z] [iam] checking project social-network-ee6ec for permissions ["firebase.projects.get"]
+[debug] [2019-08-07T20:06:57.016Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-08-07T20:06:57.016Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-08-07T20:06:57.148Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-07T20:06:57.155Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/social-network-ee6ec:testIamPermissions  
+
+[debug] [2019-08-07T20:06:58.214Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-07T20:06:58.216Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-ee6ec  
+ 
+[debug] [2019-08-07T20:06:59.567Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/trini/Desktop/Proyecto-Social-Network/SCL010-Social-Network'...
+[info] 
+[debug] [2019-08-07T20:06:59.569Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-ee6ec/webApps/-/config  
+ 
+[debug] [2019-08-07T20:07:00.889Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
