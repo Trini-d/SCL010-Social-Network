@@ -14,14 +14,21 @@
 <body>
   
   
-  <!-- <ul>
-  <li>
-    <a href="#/login">Login Google</a>
-  </li>
-  <li>
-    <a href="#/create">Crear cuenta</a>
-  </li>
-</ul> -->
+  <ul>
+    <li>
+      <a href="#/login">Login Google</a>
+    </li>
+    <li>
+      <a href="#/create">Crear cuenta</a>
+    </li>
+    <li>
+      <a href="#/userForm">Formulario Usuario</a>
+    </li>
+    <li>
+      <a href="#/userProfile">Perfil Usuario</a>
+    </li>
+
+  </ul>
   <div id="root"></div>
   <script type="module" src="./app.js"></script>
 
@@ -49,6 +56,11 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        db.settings = ({
+            timestampsInSnapshots: true
+        });
+
 </script>
  
 
