@@ -1,4 +1,4 @@
-import {templateCreate} from './../views/templateCreate.js';
+
 
 
 export const loginGoogle = () => {
@@ -9,12 +9,11 @@ export const loginGoogle = () => {
         .then(function(result) {
         // This gives you a Google Access Token. You can use it to access the Google API.
         var token = result.credential.accessToken;
-        console.log(token);
         // The signed-in user info.
         var user = result.user;
-        console.log("FUNCIONO")
+        console.log("FUNCIONO");
         console.log("USER COMO VIENE", user);
-        user['favoriteBand'] = "red hot chilli peppers";
+        user.favoriteBand = "red hot chilli peppers";
         console.log("USER MODIFICADO", user);
         // ...
       }).catch(function(error) {

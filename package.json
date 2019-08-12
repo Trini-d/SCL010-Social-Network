@@ -1,38 +1,23 @@
 {
-  "name": "proyecto-social-network",
+  "name": "firebasefirestore",
   "version": "1.0.0",
-  "description": "Social Network Project",
-  "main": "src/index.html",
-  "scripts": {
-    "test": "jest --coverage",
-    "eslint": "eslint --ext .js src/ test/",
-    "htmlhint": "htmlhint src/*.html",
-    "pretest": "npm run eslint && npm run htmlhint",
-    "deploy": "gh-pages -d src/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Trini-d/SCL010-Social-Network.git"
-  },
-  "keywords": [
-    "social",
-    "network"
-  ],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Trini-d/SCL010-Social-Network/issues"
-  },
-  "homepage": "https://github.com/Trini-d/SCL010-Social-Network#readme",
+  "description": "",
+  "main": "index.html",
   "dependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/plugin-transform-modules-commonjs": "^7.5.0",
     "babel-core": "^6.26.3",
     "babel-jest": "^24.8.0",
     "eslint": "^6.1.0",
+    "eslint-plugin-jest": "^22.14.1",
     "express": "^4.17.1",
-    "gh-pages": "^2.0.1",
+    "gh-pages": "^2.1.0",
     "htmlhint": "^0.11.0",
+    "i": "^0.3.6",
     "jest": "^24.8.0"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
 }
