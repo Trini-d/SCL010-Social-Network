@@ -2,14 +2,18 @@
 import { templateLogin } from './assets/views/templateLogin.js';
 import { templateCreate } from './assets/views/templateCreate.js';
 import { templateUserForm } from './assets/views/templateUserForm.js';
-import { templateProfile } from './assets/views/templateProfile.js';
+import { retrieveProfile } from './assets/js/retriveUserForm.js';
+// import { templateProfile } from './assets/views/templateProfile.js';
 
 /* changeRouter llama a la función que carga cada template */
+
+
+
 const changeRouter = (hash) => {
   
-  if(hash === ''){
-     return showTemplate('#/create');
-  }
+  // if(hash === ''){
+  //    return showTemplate('#/create');
+  // }
   if (hash === '#/login') {
     return showTemplate(hash);
   }
@@ -19,10 +23,10 @@ const changeRouter = (hash) => {
   if(hash === '#/userForm') {
     return showTemplate(hash);
   }
-  // if(hash === '#/userProfile') {
-  //   return showTemplate(hash);
+  if(hash === '#/userProfile') {
+    return showTemplate(hash);
 }
-
+}
 // imprimirá el template en el html
 const showTemplate = (hash) => {
   const router = hash.substring(2);
@@ -41,15 +45,13 @@ const showTemplate = (hash) => {
     case 'userForm':
       containerRoot.appendChild(templateUserForm());
     break;
-    // case 'userProfile':
-    //   containerRoot.appendChild(templateProfile());
-    // break;
+    case 'userProfile':
+      containerRoot.appendChild(retrieveProfile());
+    break;
     default:
       containerRoot.innerHTML = `<p>hola</p>`
   }
 };
-
-/* initRouter es la función que 'escucha' los cambios de hash */
 export const initRouter = () => {
   window.addEventListener('load', changeRouter(window.location.hash));
 
