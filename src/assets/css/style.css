@@ -1,9 +1,9 @@
 /*PALETA DE COLORES
-Ku Crimson: #e3170a
-Rich Black: #050505
-Dark Sienna: #32021f
+-----ACTUALIZAR A LOS COLORES ESCOGIDOS----
 
 */
+
+/* REGLAS PARA LA PÁGINA EN GENERAL (BODY, HEADINGS, ETC, LO QUE SE VAYA A USAR TRANSVERSALMENTE */
 a,
 a:visited,
 a:active {
@@ -12,16 +12,32 @@ a:active {
     color: #fff;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  background-size: cover;
+  font-family: ubuntu;
+  height: 100vh;
+
+}
+
 ul {
     list-style-type: none;
 }
 
-body {
-    
-    background: #050505;
-    font-family: ubuntu;
-}
 
+
+h1 {
+  color: #fff;
+  font-size: 64px;
+  letter-spacing: 2px;
+  margin-top: 80px;
+  text-align: center;
+}
+/* FIN DE REGLAS PARA LA PÁGINA EN GENERAL */
+
+/* REGLAS PARA BARRA DE NAVEGACIÓN */
 .navigationBar {
     display: flex;
     justify-content: right;
@@ -33,13 +49,8 @@ body {
     margin: 1%;
 }
 
-h1 {
-    color: #fff;
-    font-size: 64px;
-    letter-spacing: 2px;
-    margin-top: 80px;
-    text-align: center;
-}
+/* FIN DE REGLAS PARA BARRA DE NAVEGACIÓN */
+
 
 .content {
     background: #fff;
@@ -50,6 +61,8 @@ h1 {
     box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
 
 }
+
+/*REGLAS PARA EL LISTADO DE POSTS*/
 
 .ulPosts {
     display: flex;
@@ -65,7 +78,7 @@ h1 {
     color: #555;
     position: relative;
     border-bottom: 1px solid #e6e6e6;
-    height: 4em;
+    height: 8em;
 }
 
 .ulPosts li:nth-child(even) {
@@ -94,6 +107,15 @@ h1 {
     font-weight: bold;
     cursor: pointer;
 }
+
+.editPostClass{
+  font-size: 0.8em;
+  position: absolute;
+  left: 90%;
+  text-align:right;
+  cursor: pointer;
+}
+/***** FIN DE REGLAS PARA EL LISTADO DE POSTS *****/
 
 .formWrapper {
     display: flex;
@@ -177,6 +199,12 @@ button {
   background: rgb(37, 26, 26);
 }
 
+
+/********FIN DE REGLAS PARA CONFIRMACIÓN DE ELIMINACIÓN DEL POST***********/
+
+
+
+
 /*REGLAS PARA LOGIN*/
 
 #createAccount{
@@ -184,15 +212,7 @@ button {
     background-color: black;
     grid-template-columns: 100px 100px 100px 100px;
 }
-body {
-    margin: 0;
-    padding: 0;
-    background: url(../img/bg.jpeg) no-repeat center top;
-    background-size: cover;
-    font-family: sans-serif;
-    height: 100vh;
-  
-  }
+
 
   
   .login-box {

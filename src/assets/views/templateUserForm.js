@@ -23,13 +23,14 @@ export const templateUserForm = () => {
                         </div>`;
     // pasar el contenido al div
     containerUserForm.innerHTML = contentUserForm;
-    // le pido que busque el id del boton dentro del div creado
-    const btn = containerUserForm.querySelector('#sendForm');
-    // evento del botón que llama a la autentificación de google.
-    btn.addEventListener('click', (evt) => {
-      evt.preventDefault();
-     
+    document.querySelector('#root').appendChild(containerUserForm);
+    // // le pido que busque el id del boton dentro del div creado
+    // const btn = containerUserForm.querySelector('#sendForm');
+    // // evento del botón que llama a la autentificación de google.
+    // btn.addEventListener('click', (evt) => {
+    // console.log('ha hecho click en el botón cuyo id es #sendForm');
+    //   evt.preventDefault();
       createUserForm();
-    })
+    // });
     return containerUserForm;
-}
+};
