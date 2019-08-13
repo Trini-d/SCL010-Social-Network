@@ -1,22 +1,30 @@
-
 import {
-    templateLogin
+  templateLogin
 } from './assets/views/templateLogin.js';
 
+
 import {
-    templateCreate
+  templateCreate
 } from './assets/views/templateCreate.js';
 
 import {
     realTimeRetriever
 } from './assets/js/Posts-CRUD.js';
 
+import{
+  templateUserForm
+}from './assets/views/templateUserForm.js';
+
 import {
-    printPostForm
+  templateProfile
+}from './assets/views/templateProfile.js';
+
+import {
+  printPostForm
 } from './assets/views/createPostTemplate.js';
 
 import {
-    createEmptyList
+  createEmptyList
 } from './assets/views/retrivePostsTemplate.js';
 
 import { 
@@ -31,30 +39,33 @@ import {
 
 /* changeRouter llama a la función que carga cada template */
 export const changeRouter = (hash) => {
-    console.log(hash);
-    if (hash === '') {
-        return showTemplate('#/create');
-    }
-    if (hash === '#/create') {
-        return showTemplate('#/create');
-    }
-    if (hash === '#/login') {
-        return showTemplate(hash);
-    }
+  console.log(hash);
+  if (hash === '') {
+    return showTemplate('#/create');
+  }
 
-    if (hash === '#/feed') {
-      
-        return showTemplate(hash);
-    }
+  if (hash === '#/create') {
+    return showTemplate('#/create');
+  }
 
-    if (hash === '#/createPost') {
-        return showTemplate(hash);
-    }
-    if(hash === '#/userForm') {
-      return showTemplate(hash);
-    }
-    if(hash === '#/userProfile') {
-       return showTemplate(hash);
+  if (hash === '#/login') {
+    return showTemplate(hash);
+  }
+
+  if (hash === '#/feed') {
+    return showTemplate(hash);
+  }
+
+  if (hash === '#/createPost') {
+    return showTemplate(hash);
+  }
+
+  if (hash === '#/userForm') {
+    return showTemplate(hash);
+  }
+
+  if (hash === '#/userProfile') {
+    return showTemplate(hash);
   }
 
 };
@@ -92,16 +103,16 @@ export const showTemplate = (hash) => {
             containerRoot.innerHTML = `<h2>Error 404. La página que está solicitando no se encuentra disponible</h2>`;
     }
 
-  };
+};
 /* initRouter es la función que 'escucha' los cambios de hash */
 export const initRouter = () => {
 
-    window.addEventListener('load', changeRouter(window.location.hash));
+  window.addEventListener('load', changeRouter(window.location.hash));
 
-    // reconoce un cambio en el hash y le pasa ese nuevo hash a changeRouter
-    if ('onhashchange' in window) {
-        window.onhashchange = () => {
-            changeRouter(window.location.hash);
-        };
-    }
+  // reconoce un cambio en el hash y le pasa ese nuevo hash a changeRouter
+  if ('onhashchange' in window) {
+    window.onhashchange = () => {
+      changeRouter(window.location.hash);
+    };
+  }
 };

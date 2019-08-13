@@ -4,6 +4,10 @@ import {
 } from './../views/retrivePostsTemplate.js';
 
 import {
+    showPostFull
+}from './../views/showSinglePostTemplate.js';
+
+import {
     deleteConfiTemplate
 } from './../views/deleteConfirmTemplate.js';
 
@@ -40,7 +44,7 @@ export const createPost = () => {
         document.querySelector('.formWrapper').remove();
         publicationSuccess();
         //escuchamos cuando el usuario haga click a la "x" y le redirigimos al feed donde estará su post publicado
-        document.querySelector('#closeIt').addEventListener('click', (event)=>{
+        document.querySelector('#closeIt').addEventListener('click', (event) => {
             document.querySelector('#successWrap').remove();
             changeRouter('#/feed');
         });
@@ -53,30 +57,36 @@ export const createPost = () => {
 
 export const retrievePosts = () => {
     db.collection('posts').get().then((snapshot) => {
+        console.log('esto es snapshot de la función retrievePosts ', snapshot);
         snapshot.docs.forEach(post => {
             return renderPostInTemplate(post);
 
         });
     });
-  
+
 };
 
+retrievePosts();
 /* RETRIEVE en TIEMPO REAL */
 
 export const realTimeRetriever = () => {
     deletePost();
-    let usuario = firebase.auth().currentUser;
-    console.log(usuario);
+    showSinglePost();
+    // let usuario = firebase.auth().currentUser;
+    // console.log(usuario);
+    // console.log(usuario.uid);
     db.collection('posts').onSnapshot(snapshot => {
         let postList = document.querySelector('.ulPosts');
         let changes = snapshot.docChanges();
         changes.forEach(change => {
-            //console.log(change.doc.data());
+            console.log('esto es change de la funcion realTimeRet.', change);
+            console.log('esto es change.doc.data() de la funcion realTimeRet.',change.doc.data());
+            console.log('esto es change.doc.id de la funcion realTimeRet.',change.doc.id);
             if (change.type === 'added') {
                 renderPostInTemplate(change.doc);
             } else if (change.type === 'removed') {
                 let deletedPost = document.querySelector(`li[data-id="${change.doc.id}"]`);
-               // deletedPost.remove();
+                // deletedPost.remove();
                 postList.removeChild(deletedPost);
 
             }
@@ -86,6 +96,31 @@ export const realTimeRetriever = () => {
 };
 
 /* RETRIEVE POST DETAILS ---MUESTRA DETALLES DE UN SOLO POST ----*/
+const showSinglePost = ()=>{
+    document.addEventListener('click', (event)=>{
+        let clickedElement = event.target;
+        console.log(clickedElement);
+        if(clickedElement.parentElement.className == 'post'){
+           let postUid = clickedElement.parentElement.getAttribute('data-id');
+           console.log('este es el postUid', postUid);
+           showPostFull(postUid);
+
+        }else if(clickedElement.className == 'editPostClass'){
+            // aquí damos instrucciones para que se cargue un formulario pre-llenado
+            // con los valores actuales, el usuario puede modificar los campos y al
+            // pulsar el botón "guardar cambios", se llama a una función que usa el
+            // .update de firebase y reescribe el documento (objeto) con los valores
+            // que consigue en este formulario de edición
+        }else{
+            console.log('buscar el mensaje apropiado en caso de necesitarlo');
+        }
+
+    });
+
+};
+
+
+
 
 /**********Función de filtrado de resultados en el Feed de publicaciones*********/
 

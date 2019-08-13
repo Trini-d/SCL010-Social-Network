@@ -1,4 +1,4 @@
-import {createUserForm} from './../js/userForm.js';
+import { createUserForm } from './../js/userForm.js';
 
 export const templateUserForm = () => {
     // creamos div que contendrá la plantilla
@@ -54,13 +54,13 @@ export const templateUserForm = () => {
                         </div>`;
     // pasar el contenido al div
     containerUserForm.innerHTML = contentUserForm;
+
     // le pido que busque el id del boton dentro del div creado
     const btn = containerUserForm.querySelector('#sendForm');
     // evento del botón que llama a la autentificación de google.
     btn.addEventListener('click', (evt) => {
-      
-     
-      createUserForm();
+        createUserForm();
+
+        return containerUserForm;
     })
-    return containerUserForm;
-}
+};

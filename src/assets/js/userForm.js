@@ -8,6 +8,7 @@ export const createUserForm = () => {
     console.log("te muestro el usuaro"+ user.uid);
     const userForm = document.querySelector('#user-profile-form');
     userForm.addEventListener('submit', (evt) => {
+        console.log('entra al listener de createUserForm');
         evt.preventDefault();
         console.log('esto es dbcollection ' + db.collection('userForm'));
         let genderIndex = userForm.gender.selectedIndex;
@@ -30,7 +31,7 @@ export const createUserForm = () => {
             "influencias": userForm.influences.value,
             "userUid": userUid
         });
-        //limpiamos el formulario luego de que el usuario pulse haga submit
+        //limpiamos el formulario luego de que el usuario haga submit
          userForm.userName.value = '';
          userForm.age.value = '';
          userForm.city.value = '';
