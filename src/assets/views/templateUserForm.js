@@ -24,27 +24,27 @@ export const templateUserForm = () => {
                             </select>
                             <select id="selectInstrument" name="instrument">
                                 <option value="instrument" hidden selected>Instrumento 1</option>
-                                <option value="guitar">Guitarra</option>
-                                <option value="bass">Bajo</option>
-                                <option value="drums">Batería</option>
+                                <option value="guitarra">Guitarra</option>
+                                <option value="bajo">Bajo</option>
+                                <option value="batería">Batería</option>
                             </select>
                             <select class="align-right" name="level">
                                 <option value="level" hidden selected>Nivel</option>
-                                <option value="basic">Básico</option>
-                                <option value="medium">Medio</option>
-                                <option value="advanced">Avanzado</option>
+                                <option value="básico">Básico</option>
+                                <option value="medio">Medio</option>
+                                <option value="avanzado">Avanzado</option>
                             </select>
                             <select id="selectInstrumentTwo" name="instrumentTwo">
                                 <option value="instrument" hidden selected>Instrumento 2</option>
-                                <option value="guitar">Guitarra</option>
-                                <option value="bass">Bajo</option>
-                                <option value="drums">Batería</option>
+                                <option value="guitarra">Guitarra</option>
+                                <option value="bajo">Bajo</option>
+                                <option value="batería">Batería</option>
                             </select>
-                            <select class="align-right" name="level">
+                            <select class="align-right" name="levelTwo">
                                 <option value="level" hidden selected>Nivel</option>
-                                <option value="basic">Básico</option>
-                                <option value="medium">Medio</option>
-                                <option value="advanced">Avanzado</option>
+                                <option value="básico">Básico</option>
+                                <option value="medio">Medio</option>
+                                <option value="avanzado">Avanzado</option>
                             </select>
                             <input type="text" name="styles" placeholder="Estilos favoritos">
                             <input type="text" name="influences" placeholder="Influencias">

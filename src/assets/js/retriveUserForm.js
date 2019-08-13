@@ -1,38 +1,53 @@
 
-
-// import {createUserForm} from './../js/userForm.js';
-// import {templateProfile} from './../views/templateProfile.js';
-// import {templateUserForm} from './../views/templateUserForm.js';
-
-
-
 export const renderProfile = (profile) => {
+    let containerProfile = document.createElement('div');
     let profileList = document.createElement('ul');
     profileList.setAttribute('class', 'ulProfile');
-    document.getElementById('root').appendChild(profileList);
+    document.getElementById('root').appendChild(containerProfile);
 
     let liElement = document.createElement('li');
-    let userName = document.createElement('span');
-    let age = document.createElement('span');
-    let gender = document.createElement('span');
-    let city = document.createElement('span');
-    let musicProfile = document.createElement('span');
+
+    let userName = document.createElement('li');
+    let age = document.createElement('li');
+    let gender = document.createElement('li');
+    let city = document.createElement('li');
+    let musicProfile = document.createElement('li');
+    let instrumentOne  = document.createElement('li');
+    let levelOne = document.createElement('li');
+    let instrumentTwo = document.createElement('li');
+    let levelTwo = document.createElement('li');
+    let styles = document.createElement('li');
+    let influences = document.createElement('li');
+
+
     console.log(profile.data());
 
     userName.textContent = profile.data().name;
     age.textContent = profile.data().age;
     gender.textContent = profile.data().genero;
-    city.textContent = profile.data().city;
+    city.textContent = profile.data().ciudad;
     musicProfile.textContent = profile.data().perfilMusical;
+    instrumentOne.textContent = profile.data().instrumentoUno;
+    levelOne.textContent = profile.data().nivelUno;
+    instrumentTwo.textContent = profile.data().instrumentoDos;
+    levelTwo.textContent = profile.data().nivelDos;
+    styles.textContent = profile.data().estilos;
+    influences.textContent = profile.data().influencias;
 
     liElement.appendChild(userName);
     liElement.appendChild(age);
     liElement.appendChild(gender);
-    //liElement.appendChild(publicationDate);
     liElement.appendChild(city);
     liElement.appendChild(musicProfile);
+    liElement.appendChild(instrumentOne);
+    liElement.appendChild(levelOne);
+    liElement.appendChild(instrumentTwo);
+    liElement.appendChild(levelTwo);
+    liElement.appendChild(styles);
+    liElement.appendChild(influences);
 
     profileList.appendChild(liElement);
+    containerProfile.appendChild(profileList);
   
 
  
@@ -59,65 +74,9 @@ export const retrieveProfile = () => {
           // No user is signed in.
         }
       });
-      
-    
-    
 };
 
 
 
 
-
-// export const retrieveProfile = () => {
-//     document.getElementById("profile")
-//     db.collection('userForm').get().then((snapshot) => {
-//         snapshot.docs.forEach(profile => {
-//             return renderProfile(profile);
-
-//         });
-//     });
-//     //cargamos las funciones relacionadas para que estén disponibles cuando se crea la lista de posts
-
-    
-// };
-
-// export const renderPostInTemplate = (post) => {
-//     let postList = document.createElement('ul');
-//     postList.setAttribute('class', 'ulPosts');
-//     document.getElementById('root').appendChild(postList);
-
-//     let liElement = document.createElement('li');
-//     /*le asignamos al elemento li un atributo llamado data-id que va a ser igual 
-//     al propio id autogenerado por la base de datos */
-//     liElement.setAttribute('data-id', post.id);
-//     let author = document.createElement('span');
-//     let category = document.createElement('span');
-//     let content = document.createElement('span');
-//     let publicationDate = document.createElement('span');
-//     let likes = document.createElement('span');
-//     let deleteEx = document.createElement('div');
-//     deleteEx.setAttribute('class', 'cross');
-
-//     /*ahora le agregamos el valor que va a ir en cada uno de los elementos */
-//     author.textContent = post.data().autor;
-//     category.textContent = post.data().categoria;
-//     content.textContent = post.data().contenido;
-//     publicationDate.textContent = post.data().fechaPublic;
-//     deleteEx.textContent = 'x';
-//     likes.textContent = post.data().likes;
-
-//     /*inyectamos cada valor traído en la lista que le corresponde*/
-//     liElement.appendChild(author);
-//     liElement.appendChild(category);
-//     liElement.appendChild(content);
-//     liElement.appendChild(publicationDate);
-//     liElement.appendChild(likes);
-//     liElement.appendChild(deleteEx);
-
-//     /*ahora inyectamos lo creado en el elemento del DOM 
-//     que va a contener todo el resultado de la petición */
-//     console.log(typeof(liElement));
-//     postList.appendChild(liElement);
-
-// };
 

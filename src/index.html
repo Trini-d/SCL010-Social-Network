@@ -1,69 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-​
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
-  <title>Social Network</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+    <meta lang="es">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Music Link</title>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-​
 
 <body>
+
   
-  
-  <ul>
-    <li>
-      <a href="#/login">Login Google</a>
-    </li>
-    <li>
-      <a href="#/create">Crear cuenta</a>
-    </li>
-    <li>
-      <a href="#/userForm">Formulario Usuario</a>
-    </li>
-    <li>
-      <a href="#/userProfile">Perfil Usuario</a>
-    </li>
+    <nav>
+        <ul class="navigationBar">
+            <li><a href="#/login">Login</a></li>
+            <li><a href="#/create">Registrarse</a></li>
+            <li><a href="#/userForm">Formulario Usuario</a></li>
+           <li><a href="#/userProfile">Perfil Usuario</a></li>
+            <li><a href="#/feed">Ver Feed</a></li>
+            <li><a href="#/createPost">Crear una publicación</a></li>
+
+        </ul>
+    </nav>
+    <div id="root"></div>
+    <script type="module" src="./app.js"></script>
+
     
-  </ul>
- 
-  <div id="root"></div>
-  <script type="module" src="./app.js"></script>
-
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
+    <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#config-web-app -->
-
-      <!-- Add additional services that you want to use -->
-<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
-
-     
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyB8_MFbpcvE4SsHsliy-7i1gL6Hij3bhUc",
-    authDomain: "social-network-ee6ec.firebaseapp.com",
-    databaseURL: "https://social-network-ee6ec.firebaseio.com",
-    projectId: "social-network-ee6ec",
-    storageBucket: "",
-    messagingSenderId: "158135100699",
-    appId: "1:158135100699:web:f23d8750e5b5f816"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+    <script>
+        // Your web app's Firebase configuration ---Nigma---ojo, conservar la configuración de trini, no esta
+          var firebaseConfig = {
+            apiKey: "AIzaSyB8_MFbpcvE4SsHsliy-7i1gL6Hij3bhUc",
+            authDomain: "social-network-ee6ec.firebaseapp.com",
+            databaseURL: "https://social-network-ee6ec.firebaseio.com",
+            projectId: "social-network-ee6ec",
+            storageBucket: "",
+            messagingSenderId: "158135100699",
+            appId: "1:158135100699:web:f23d8750e5b5f816"
+          };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
+        //esta parte del script debe estar para garantizar la funcionalidad de firestore     
         db.settings = ({
             timestampsInSnapshots: true
         });
+    </script>
 
-</script>
- 
+
+
 
 </body>
+
 </html>
