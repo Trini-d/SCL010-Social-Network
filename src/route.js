@@ -2,20 +2,32 @@ import {
   templateLogin
 } from './assets/views/templateLogin.js';
 
-
+import{
+  logOutFn
+}from './assets/js/auth.js';
 import {
   templateCreate
 } from './assets/views/templateCreate.js';
 
 import {
-    realTimeRetriever
+  realTimeRetriever
 } from './assets/js/Posts-CRUD.js';
 
-import{
+import {
+  showPostFull
+} from './assets/views/showSinglePostTemplate.js';
+
+<<<<<<< HEAD
+
+=======
+import {
   templateUserForm
-}from './assets/views/templateUserForm.js';
+} from './assets/views/templateUserForm.js';
 
-
+// import {
+//   templateProfile
+// }from './assets/views/templateProfile.js';
+>>>>>>> 30eade08086328036d89e45f48543f195b905ddd
 
 import {
   printPostForm
@@ -25,11 +37,17 @@ import {
   createEmptyList
 } from './assets/views/retrivePostsTemplate.js';
 
+<<<<<<< HEAD
 import { 
     retrieveProfile 
 } from './assets/js/retriveUserForm.js';
 
 
+=======
+import {
+  retrieveProfile
+} from './assets/js/retriveUserForm.js';
+>>>>>>> 30eade08086328036d89e45f48543f195b905ddd
 
 
 
@@ -48,7 +66,15 @@ export const changeRouter = (hash) => {
     return showTemplate(hash);
   }
 
+  if (hash === '#/logout') {
+    return showTemplate(hash);
+  }
+
   if (hash === '#/feed') {
+    return showTemplate(hash);
+  }
+
+  if (hash === '#/singlePost') {
     return showTemplate(hash);
   }
 
@@ -66,38 +92,55 @@ export const changeRouter = (hash) => {
 
 };
 
+export const changeRoutePost = (hash) => {
+  console.log('esto es hash como viene de showSinglePost', hash);
+  let hashSplitted = hash.split('-')[1];
+  console.log('esto es hash splitted', hashSplitted);
+  showPostFull(hashSplitted);
+  window.location.hash = hash;
+
+};
+
 // Función que determina qué template se inyecta en el index.html
 export const showTemplate = (hash) => {
-    const router = hash.substring(2);
-    const containerRoot = document.getElementById('root');
-    containerRoot.innerHTML = '';
+  const router = hash.substring(2);
+  const containerRoot = document.getElementById('root');
+  containerRoot.innerHTML = '';
 
-    // hacemos el match del hash utilizado y el template que queremos mostrar
-    switch (router) {
-        case 'login':
-            containerRoot.appendChild(templateLogin());
-            break;
-        case 'create':
-            containerRoot.appendChild(templateCreate());
-            break;
-        case 'feed':
-            console.log('entra al case feed');
-            createEmptyList();
-            realTimeRetriever();
-            break;
-        case 'createPost':
-            createEmptyList();
-            containerRoot.appendChild(printPostForm());
-            break;
-        case 'userForm':
+  // hacemos el match del hash utilizado y el template que queremos mostrar
+  switch (router) {
+    case 'login':
+      containerRoot.appendChild(templateLogin());
+      break;
+    case 'logout':
+      logOutFn();
+      break;
+
+    case 'create':
+      containerRoot.appendChild(templateCreate());
+      break;
+    case 'feed':
+      console.log('entra al case feed');
+      createEmptyList();
+      realTimeRetriever();
+      break;
+    case 'singlePost':
+      console.log('entra al case singlePost');
+      showPostFull();
+      break;
+    case 'createPost':
+      createEmptyList();
+      containerRoot.appendChild(printPostForm());
+      break;
+    case 'userForm':
       containerRoot.appendChild(templateUserForm());
-          break;
-        case 'userProfile':
+      break;
+    case 'userProfile':
       containerRoot.appendChild(retrieveProfile());
-          break;
-          default:
-            containerRoot.innerHTML = `<h2>Error 404. La página que está solicitando no se encuentra disponible</h2>`;
-    }
+      break;
+    default:
+      containerRoot.innerHTML = `<h2>Error 404. La página que está solicitando no se encuentra disponible</h2>`;
+  }
 
 };
 /* initRouter es la función que 'escucha' los cambios de hash */

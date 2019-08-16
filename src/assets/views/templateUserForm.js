@@ -61,6 +61,12 @@ export const templateUserForm = () => {
     btn.addEventListener('click', (evt) => {
         
         createUserForm();
+<<<<<<< HEAD
      });
     return containerUserForm;
+=======
+    });
+        return containerUserForm;
+    
+>>>>>>> 30eade08086328036d89e45f48543f195b905ddd
 };
