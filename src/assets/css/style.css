@@ -1,0 +1,408 @@
+/*PALETA DE COLORES
+Gunmetal :: #2b2d42
+Gray Blue :: 8d99ae
+Anti Flash White :: edf2f4
+University Tenesse Orange :: #f77f00
+Tangelo :: #f74902
+negrital: 19191a
+
+*/
+
+/* REGLAS PARA LA PÁGINA EN GENERAL (BODY, HEADINGS, ETC, LO QUE SE VAYA A USAR TRANSVERSALMENTE */
+a,
+a:visited,
+a:active {
+    text-decoration: none;
+    text-emphasis: none;
+    color: #fff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #19191a;
+  background-size: cover;
+  font-family: ubuntu;
+  height: 100vh;
+
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+
+h1 {
+  color: #fff;
+  font-size: 64px;
+  letter-spacing: 2px;
+  margin-top: 80px;
+  text-align: center;
+}
+/* FIN DE REGLAS PARA LA PÁGINA EN GENERAL */
+
+/* REGLAS PARA BARRA DE NAVEGACIÓN */
+.navigationBar {
+    display: flex;
+    justify-content: right;
+    
+}
+
+.navigationBar li {
+    line-height: 0.8em;
+    margin: 1%;
+}
+
+/* FIN DE REGLAS PARA BARRA DE NAVEGACIÓN */
+
+
+
+/*REGLAS PARA EL LISTADO DE POSTS*/
+
+.ulPosts {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+}
+
+.ulPosts li {
+    padding: 20px;
+    background: #edf2f4;
+    font-size: 20px;
+    color: #2b2d42;
+    position: relative;
+    border-bottom: 1px solid #f77f00;
+    height: 8em;
+}
+
+.ulPosts li:nth-child(even) {
+    padding: 20px;
+    background: #8d99ae;
+}
+
+.ulPosts li span {
+    display: block;
+}
+
+.ulPosts li span:nth-child(2) {
+    font-size: 16px;
+    margin-top: 6px;
+    color: #edf2f4;
+}
+
+.ulPosts li div {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    background: rgba(255, 255, 255, 0.6);
+    width: 40px;
+    text-align: center;
+    padding: 10px 0;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.editPostClass{
+  font-size: 0.8em;
+  position: absolute;
+  left: 90%;
+  text-align:right;
+  cursor: pointer;
+}
+/***** FIN DE REGLAS PARA EL LISTADO DE POSTS *****/
+
+/* REGLAS PARA FORMULARIO DE CREACIÓN DE POST */
+
+.formWrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #999;
+    padding: 4% 2%;
+
+}
+
+.inputForm {
+    border-radius: 2%;
+    width: 20em;
+    margin-bottom: 1%;
+    border: 0;
+    border-bottom: 1px solid rgb(146, 31, 31);
+    margin: 0 auto;
+    padding: 10px;
+    display: block;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.inputContent {
+
+    margin: 0 auto;
+    margin: 2% 0;
+    border-bottom: 1px solid #eee;
+    width: 50em;
+    padding: 10px;
+    display: block;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+form input:focus {
+    outline: none;
+    border-bottom: 3px solid #88236f;
+    padding-bottom: 8px;
+    transition: all ease 0.2s;
+}
+
+
+
+button {
+    border: 0;
+    background: #f74902;
+    border-radius: 10px;
+    padding: 13px;
+    width: 100%;
+    box-shadow: -1px 0px 1px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    font-family: ubuntu;
+    letter-spacing: 1px;
+    color: #edf2f4;
+    cursor: pointer;
+    margin: 0 auto;
+    transition: all;
+
+}
+
+/******** FIN DE REGLAS PARA FORMULARIO DE CREACIÓN DE POST *******/
+
+/* REGLAS PARA VER POST INDIVIDUAL */
+
+.singlePostClass{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background: #edf2f4;
+color: #2b2d42;
+
+}
+
+.postAuthorClass{
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.postCategoryClass{
+  font-weight: bold;
+  font-size: 1.2em;
+  background: #f77f00;
+  text-align: center;
+  border-radius: 6%;
+  padding: 0.9%;
+  width: 10%;
+  
+}
+/**** FIN DE REGLAS PARA VER POST INDIVIDUAL ****/
+
+/*REGLAS PARA EL POPUP DE LA CONFIRMACIÓN DE ELIMINACIÓN DE POST*/
+
+.popUp{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: #edf2f4;
+  background: #f74902;
+  padding: 4% 2%;
+  z-index : 2;
+  position: absolute;
+  top : 40vh;
+  left: 30vh; 
+}
+
+#closeIt{
+  padding: 4%;
+  cursor: pointer;
+  background: rgb(37, 26, 26);
+}
+
+
+/********FIN DE REGLAS PARA CONFIRMACIÓN DE ELIMINACIÓN DEL POST***********/
+
+
+/*REGLAS PARA LOGIN*/
+
+#createAccount{
+    display: grid;
+    background-color: #2b2d42;
+    grid-template-columns: 100px 100px 100px 100px;
+}
+
+
+  
+  .login-box {
+    display: flex;
+    flex-direction: column;
+    /* width: 320px;
+    height: 350px; */
+    background:  #f77f00;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border-radius: 15px;
+  }
+  
+  .login-box .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+  }
+  
+  .login-box h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+  }
+  
+  .login-box label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+  }
+  
+  .login-box input {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .login-box input[type="text"], .login-box input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  .login-box button[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #f74902;
+    color: #edf2f4;
+    font-size: 18px;
+    border-radius: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .login-box button[type="submit"]:hover {
+    cursor: pointer;
+    background: #2b2d42;
+    color: #edf2f4;
+  }
+  
+  .login-box a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+  }
+  
+  .login-box a:hover {
+    color: #fff;
+  }
+  
+  /*REGLAS PARA FORMULARIO DE USUARIO*/
+
+#user-profile-form{
+	max-width: 620px;
+	padding: 10px 20px;
+	margin: 10px auto;
+	padding: 20px;
+	background: #f77f00;
+	border-radius: 8px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+#user-profile-form input[type="text"],
+#user-profile-form input[type="number"],
+#user-profile-form select {
+	background: rgba(255,255,255,.1);
+	border: none;
+	border-radius: 4px;
+	font-size: 15px;
+	margin: 0;
+	outline: 0;
+	padding: 10px;
+	width: 100%;
+	box-sizing: border-box; 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+	background-color: #e8eeef;
+	color:#000;
+	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+	margin-bottom: 30px;
+}
+
+#user-profile-form input[type="text"]:focus,
+#user-profile-form input[type="number"]:focus,
+#user-profile-form select:focus {
+    background: #d2d9dd;
+}
+#user-profile-form p{
+    font-size: 20px;
+    text-align: center;
+    
+}
+#user-profile-form button[type="submit"]
+{
+	position: relative;
+	display: block;
+	padding: 19px 39px 18px 39px;
+	color: #e8eeef;
+	margin: 0 auto;
+	background: #000;
+	font-size: 18px;
+	text-align: center;
+	font-style: normal;
+	width: 60%;
+	border: 1px solid #000;
+	border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+#user-profile-form button[type="submit"]:hover
+{
+   
+	background: #ff6a00;
+}
+#user-profile-form input.align-left{
+    float:left;
+    width: 49%;
+}
+#user-profile-form select.align-right{
+    float:right;
+    width: 49%;
+    padding: 9px;
+}
+#user-profile-form #selectInstrument{
+   
+    width: 49%;
+}
+#user-profile-form #selectInstrumentTwo{
+    float:left;
+    width: 49%;
+}
