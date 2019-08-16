@@ -27,8 +27,9 @@ body {
 
 }
 
-ul {
+ul, li {
     list-style-type: none;
+    text-decoration: none;
 }
 
 
@@ -42,19 +43,136 @@ h1 {
 }
 /* FIN DE REGLAS PARA LA PÁGINA EN GENERAL */
 
-/* REGLAS PARA BARRA DE NAVEGACIÓN */
-.navigationBar {
-    display: flex;
-    justify-content: right;
-    
+
+/* REGLAS PARA HOME Y BARRA DE NAVEGACIÓN */
+body{
+  font-family: ubuntu;
+  font-size: 1rem;
+  line-height: 1.6em;
+  margin:0;
 }
 
-.navigationBar li {
-    line-height: 0.8em;
-    margin: 1%;
+.container{
+  width: 85%;
+  max-width: 850PX;
+  margin: 0 auto;
+}
+.header-fix{
+  background: #222835;
+  color: #fbfbfb ;
+  padding: 2rem 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+.header-fix a{
+  color: #fbfbfb ;
+  text-decoration: none;
+}
+.logo-nav-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.logo{
+  letter-spacing: 15px;
+  font-size: 1.3em;
+}
+.menu-icon{
+  display:none;
+}
+.navigation ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.navigation ul li{
+  display: inline-block;
+}
+.navigation ul li a{
+  display: block;
+  padding: 0.1rem 0.5rem;
+  transition: all 0.4s linear;
+  border-radius: 5px;
+}
+.navigation ul li a:hover {
+  background: #4a4a4a;
+}
+.main{
+  padding-top: 10rem;
+}
+.subNav{
+  padding: 0.5rem 18rem;
+}
+.banner{
+  width: 100%;
 }
 
-/* FIN DE REGLAS PARA BARRA DE NAVEGACIÓN */
+.footer{
+      text-align: center;
+      width: 100%; 
+      background: #222835;
+      color: #fbfbfb ;
+      font-size: 0.8rem;
+      margin: 0;
+}
+@media only screen and (max-width: 768px){
+  .container subNav{
+      padding: 0 2.5rem;
+  }
+}
+@media only screen and (max-width: 767px){
+  .menu-icon{
+      display:block;
+      cursor:pointer;
+      padding: 0.5rem 1rem;
+  }
+  .navigation{
+      width:100%;
+      margin:1rem;
+  }
+  .navigation ul{
+      display:none;
+  }
+  .navigation ul.show{
+      display:block;
+  }
+  .navigation ul li{
+      display: block;
+  }
+  .navigation ul li a{
+      display: block;
+      padding: 0.5rem 0;
+      transition: all 0.4s linear;
+      border-radius: 2px;
+  }
+  .navigation ul li a:hover {
+      background: #4a4a4a;
+  }
+  .subNav{
+      padding: 0.2rem 2rem;
+  }
+
+}
+
+@media only screen and (max-width: 320px){
+  .subNav{
+      padding: 0 20rem;
+
+  }
+} 
+@media only screen and (max-width: 1024px){
+  .subNav{
+      padding: 0.5rem 4.5rem;
+
+  }
+}
+
+/* FIN DE REGLAS PARA HOME Y BARRA DE NAVEGACIÓN */
+
+
 
 
 
@@ -187,6 +305,7 @@ align-items: center;
 background: #edf2f4;
 color: #2b2d42;
 
+
 }
 
 .postAuthorClass{
@@ -195,6 +314,7 @@ color: #2b2d42;
 }
 
 .postCategoryClass{
+  margin-top: 10%;
   font-weight: bold;
   font-size: 1.2em;
   background: #f77f00;
@@ -232,7 +352,7 @@ color: #2b2d42;
 /********FIN DE REGLAS PARA CONFIRMACIÓN DE ELIMINACIÓN DEL POST***********/
 
 
-/*REGLAS PARA LOGIN*/
+/*REGLAS PARA REGISTER CON EMAIL Y PASSWORD*/
 
 #createAccount{
     display: grid;
@@ -241,7 +361,6 @@ color: #2b2d42;
 }
 
 
-  
   .login-box {
     display: flex;
     flex-direction: column;
@@ -258,14 +377,6 @@ color: #2b2d42;
     border-radius: 15px;
   }
   
-  .login-box .avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    position: absolute;
-    top: -50px;
-    left: calc(50% - 50px);
-  }
   
   .login-box h1 {
     margin: 0;

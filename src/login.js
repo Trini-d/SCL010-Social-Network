@@ -1,9 +1,10 @@
-window.addEventListener('onload', ()=>{
+window.addEventListener('DOMContentLoaded', ()=>{
 
-    let menuBtn = document.querySelector('.menu-icon');
-    let menu = document.querySelector('.navigation ul');
+    let menuBtn = document.querySelector('#hamburguesa');
+    let menu = document.querySelector('.navigationUl');
 
     menuBtn.addEventListener('click', ()=>{
+      console.log('se clickeó el botón');
         if(menu.classList.contains('show')){
             menu.classList.remove('show');
         }else{
@@ -15,42 +16,9 @@ window.addEventListener('onload', ()=>{
 });
 
 
-/*
-jQuery('document').ready(function($){
-
-var menuBtn = $('.menu-icon'),
-    menu = $('.navigation ul');
-
-menuBtn.click(function(){
-
-   if(menu.hasClass('show')){
-
-    menu.removeClass('show');
-   }else{
-       menu.addClass('show');
-   }
-});
-
-});
-*/
-
-
-//FUN LOGIN
 
 const loginFun = () =>{
 
-    //inicializar firebase
-        const firebaseConfig = {
-        apiKey: "AIzaSyBnLYY5-NvVNSEUdmefhVSux_5Z1ArlkNg",
-        authDomain: "loginsn-17cc7.firebaseapp.com",
-        databaseURL: "https://loginsn-17cc7.firebaseio.com",
-        projectId: "loginsn-17cc7",
-        storageBucket: "",
-        messagingSenderId: "530468129332",
-        appId: "1:530468129332:web:63fc8777f5061876"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
     
       // Obtener elementos
       const txtEmail = document.getElementById('txtEmail');
@@ -96,17 +64,6 @@ const loginFun = () =>{
           btnLogout.classList.add('hide');
         }    
       });
-    
-      googleSignIn=()=>{ 
-          base_provider = new firebase.auth.GoogleAuthProvider()
-          firebase.auth.signInWithRedirect(base_provider).then(function(result){
-              console.log(result)
-              console.log("Success..Google Account Linked")
-          }).catch(function(err){
-              console.log(err)
-              console.log("Failed to do")    
-          }) 
-      }
     
     
     };

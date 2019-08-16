@@ -18,18 +18,47 @@
 
 <body>
 
-
-    <nav>
-        <ul class="navigationBar">
-            <li><a href="#/login">Login</a></li>
-            <li><a id="logOut" href="#/logout">Logout</a></li>
-            <li><a href="#/create">Registrarse</a></li>
-            <li><a href="#/userForm">Formulario Usuario</a></li>
-            <li><a href="#/userProfile">Perfil Usuario</a></li>
-            <li><a href="#/feed">Ver Feed</a></li>
-            <li><a href="#/createPost">Crear una publicación</a></li>
-        </ul>
-    </nav>
+    <header class="header-fix">
+        <div class="container logo-nav-container">
+            <!-- <a href="#" class="logo">MUSICLINK</a> -->
+            <span class="menu-icon"><img id="hamburguesa" src="./assets/img/menu.png" width="40" height="40" class="btnMenu"></span>
+            <nav class="navigation">
+                <ul class="navigationUl">
+                    <li><input type="search" placeholder="Buscar"></li>
+                    <li><a href="#"><img src="./assets/img/busqueda.png" width="15" height="15" class="btnBuscar"></a></li>
+                    <li><a href="#">Log in</a></li>
+                    <li><a href="#/login">Login</a></li>
+                    <li><a id="logOut" href="#/logout">Logout</a></li>
+                    <li><a href="#/create">Registrarse</a></li>
+                    <li><a href="#/userForm">Formulario Usuario</a></li>
+                    <li><a href="#/userProfile">Perfil Usuario</a></li>
+                    <li><a href="#/feed">Ver Feed</a></li>
+                    <li><a href="#/createPost">Crear una publicación</a></li>
+                </ul>
+            </nav>
+        </div>
+      
+        <!-- <main class="main">
+            <div><img src="./assets/img/fondo.jpg" width="100%" height="100%" class="banner"></div>
+            <div class="container">
+    
+                <div class="loginMenu">
+    
+                    <li><input id="txtEmail" type="email" placeholder="Email"></li>
+                    <li><input id="txtPassword" type="password" placeholder="Contraseña"></li>
+                    <li><button id="btnLogin" class="btn btn-action">Login</button>
+                        <button id="btnSignUp" class="btn btn-secondary">Registrarse</button></li>
+                    <li><button onClick="googleSignIn()">Accede con Google</button></li>
+                    <li><button id="btnLogout" class="btn btn-action hide">Logout</button></li>
+    
+    
+                </div>
+    
+            </div>
+        </main> -->
+    </header>
+    
+    
     <div id="root"></div>
     <script type="module" src="./app.js"></script>
 
@@ -65,14 +94,20 @@
         //constante que hace referencia a la base de datos
         const db = firebase.firestore();
 
-        //constante que hace referencia a la configuración de servicios de autenticación
-        const auth = firebase.auth();
-
         //esta parte del script debe estar para garantizar la funcionalidad de firestore     
         db.settings = ({
             timestampsInSnapshots: true
         });
-    </script>
+    </script>   
+     <script src="./login.js"></script>
+     <script>
+         loginFun()
+     </script>
+      <footer class="footer">
+        <div class="container">
+            <p>Copyright @2019 Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
 </body>
 

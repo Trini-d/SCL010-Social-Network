@@ -41,10 +41,10 @@ import {
 
 /* changeRouter llama a la función que carga cada template */
 export const changeRouter = (hash) => {
-  console.log(hash);
-  if (hash === '') {
-    return showTemplate('#/create');
-  }
+  // console.log(hash);
+  // if (hash === '') {
+  //   return showTemplate('#/create');
+  // }
 
   if (hash === '#/create') {
     return showTemplate('#/create');
