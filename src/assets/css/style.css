@@ -20,7 +20,7 @@ a:active {
 body {
   margin: 0;
   padding: 0;
-  background: #19191a;
+  /* background: #000; */
   background-size: cover;
   font-family: ubuntu;
   height: 100vh;
@@ -32,8 +32,6 @@ ul, li {
     text-decoration: none;
 }
 
-
-
 h1 {
   color: #fff;
   font-size: 64px;
@@ -43,80 +41,16 @@ h1 {
 }
 /* FIN DE REGLAS PARA LA PÁGINA EN GENERAL */
 
-
-/* REGLAS PARA HOME Y BARRA DE NAVEGACIÓN */
-body{
-  font-family: ubuntu;
-  font-size: 1rem;
-  line-height: 1.6em;
-  margin:0;
+/* REGLAS PARA BARRA DE NAVEGACIÓN */
+.navigation-bar {
+    display: flex;
+    justify-content: right;
+    
 }
 
-.container{
-  width: 85%;
-  max-width: 850PX;
-  margin: 0 auto;
-}
-.header-fix{
-  background: #222835;
-  color: #fbfbfb ;
-  padding: 2rem 0;
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-}
-.header-fix a{
-  color: #fbfbfb ;
-  text-decoration: none;
-}
-.logo-nav-container{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.logo{
-  letter-spacing: 15px;
-  font-size: 1.3em;
-}
-.menu-icon{
-  display:none;
-}
-.navigation ul{
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.navigation ul li{
-  display: inline-block;
-}
-.navigation ul li a{
-  display: block;
-  padding: 0.1rem 0.5rem;
-  transition: all 0.4s linear;
-  border-radius: 5px;
-}
-.navigation ul li a:hover {
-  background: #4a4a4a;
-}
-.main{
-  padding-top: 10rem;
-}
-.subNav{
-  padding: 0.5rem 18rem;
-}
-.banner{
-  width: 100%;
-}
-
-.footer{
-      text-align: center;
-      width: 100%; 
-      background: #222835;
-      color: #fbfbfb ;
-      font-size: 0.8rem;
-      margin: 0;
+.navigation-bar li {
+    line-height: 0.8em;
+    margin: 1%;
 }
 @media only screen and (max-width: 768px){
   .container subNav{
@@ -445,8 +379,8 @@ color: #2b2d42;
 	padding: 20px;
 	background: #f77f00;
 	border-radius: 8px;
-	font-family: Georgia, "Times New Roman", Times, serif;
 }
+
 #user-profile-form input[type="text"],
 #user-profile-form input[type="number"],
 #user-profile-form select {
@@ -492,8 +426,8 @@ color: #2b2d42;
 	width: 60%;
 	border: 1px solid #000;
 	border-width: 1px 1px 3px;
-    margin-bottom: 10px;
-    border-radius: 15px;
+  margin-bottom: 10px;
+  border-radius: 15px;
 }
 #user-profile-form button[type="submit"]:hover
 {
@@ -516,4 +450,44 @@ color: #2b2d42;
 #user-profile-form #selectInstrumentTwo{
     float:left;
     width: 49%;
+}
+
+/*REGLAS PARA PERFIL DE USUARIO*/
+.containerProfile{
+  width: 100%;
+  min-height: 600px;
+  margin: auto;
+  box-shadow: 0px 8px 60px -10px rgba(13,28,39,0.6);
+  background: #d80032;
+  border-radius: 12px;
+  max-width: 700px;
+  position: relative;
+}
+.profileImg{
+    width: 150px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    z-index: 4;
+    box-shadow: 0px 5px 50px 0px rgb(108, 68, 252), 0px 0px 0px 7px rgba(107, 74, 255, 0.5);
+}
+.imgProfile{
+    display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+}
+.infoUser{
+    margin-top: -35px;
+    text-align: center;
+    padding: 0 20px;
+    padding-bottom: 40px;
+    transition: all .3s;
+    font-size: 25px;
 }

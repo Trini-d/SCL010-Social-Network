@@ -10,38 +10,38 @@ export const templateUserForm = () => {
                         <p>Información de Usuario</p>
                             <input type="text" name="userName" placeholder="Tu nombre">
                             <input class="align-left" type="number" name="age" placeholder="Tu edad">
-                            <select class="align-right" name="gender">
+                            <select class="hola align-right" name="gender">
                                 <option value="gender" hidden selected>Género</option>
                                 <option class="inputForm" value="mujer">Mujer</option>
                                 <option class="inputForm" value="hombre">Hombre</option>
                                 <option class="inputForm" value="reservar">Prefiero no decirlo</option>
                             </select>
                             <input class="align-left" type="text" name="city" placeholder="Ciudad">
-                            <select class="align-right" name="musicProfile">
+                            <select class="hola align-right" name="musicProfile">
                                 <option value="profile" hidden selected>Perfil Musical</option>
                                 <option class="inputForm" value="profesional">Profesional</option>
                                 <option class="inputForm" value="noProfesional">No Profesional</option>
                             </select>
-                            <select id="selectInstrument" name="instrument">
-                                <option value="instrument" hidden selected>Instrumento 1</option>
+                            <select class="hola" id="selectInstrument" name="instrument">
+                                <option hidden selected>Instrumento 1</option>
                                 <option value="guitarra">Guitarra</option>
                                 <option value="bajo">Bajo</option>
                                 <option value="batería">Batería</option>
                             </select>
-                            <select class="align-right" name="level">
-                                <option value="level" hidden selected>Nivel</option>
+                            <select class="hola align-right" name="level">
+                                <option hidden selected>Nivel</option>
                                 <option value="básico">Básico</option>
                                 <option value="medio">Medio</option>
                                 <option value="avanzado">Avanzado</option>
                             </select>
-                            <select id="selectInstrumentTwo" name="instrumentTwo">
-                                <option value="instrument" hidden selected>Instrumento 2</option>
+                            <select class="hola" id="selectInstrumentTwo" name="instrumentTwo">
+                                <option hidden selected>Instrumento 2</option>
                                 <option value="guitarra">Guitarra</option>
                                 <option value="bajo">Bajo</option>
                                 <option value="batería">Batería</option>
                             </select>
                             <select class="align-right" name="levelTwo">
-                                <option value="level" hidden selected>Nivel</option>
+                                <option hidden selected>Nivel</option>
                                 <option value="básico">Básico</option>
                                 <option value="medio">Medio</option>
                                 <option value="avanzado">Avanzado</option>
@@ -59,8 +59,14 @@ export const templateUserForm = () => {
     const btn = containerUserForm.querySelector('#sendForm');
     // evento del botón que llama a la autentificación de google.
     btn.addEventListener('click', (evt) => {
+        
         createUserForm();
+<<<<<<< HEAD
+     });
+    return containerUserForm;
+=======
     });
         return containerUserForm;
     
+>>>>>>> 30eade08086328036d89e45f48543f195b905ddd
 };

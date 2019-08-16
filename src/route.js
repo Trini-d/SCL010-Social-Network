@@ -17,13 +17,6 @@ import {
   showPostFull
 } from './assets/views/showSinglePostTemplate.js';
 
-import {
-  templateUserForm
-} from './assets/views/templateUserForm.js';
-
-// import {
-//   templateProfile
-// }from './assets/views/templateProfile.js';
 
 import {
   printPostForm
@@ -33,9 +26,11 @@ import {
   createEmptyList
 } from './assets/views/retrivePostsTemplate.js';
 
-import {
-  retrieveProfile
+import { 
+    retrieveProfile 
 } from './assets/js/retriveUserForm.js';
+
+
 
 
 
