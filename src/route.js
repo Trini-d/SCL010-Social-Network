@@ -15,9 +15,7 @@ import{
   templateUserForm
 }from './assets/views/templateUserForm.js';
 
-import {
-  templateProfile
-}from './assets/views/templateProfile.js';
+
 
 import {
   printPostForm
@@ -31,9 +29,7 @@ import {
     retrieveProfile 
 } from './assets/js/retriveUserForm.js';
 
-import {
-  templateUserForm
-} from './../assets/views/templateUserForm.js';
+
 
 
 

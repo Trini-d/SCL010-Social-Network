@@ -21,13 +21,18 @@ export const templateCreate = () => {
           </div>
                             `;
   // pasar el contenido al div
+ 
   containerCreate.innerHTML = contentCreate;
   document.getElementById('root').appendChild(containerCreate);
   // le pido que busque el id del boton dentro del div creado
   const btn = containerCreate.querySelector('#create');
+
+  
   // evento del botón que llama a la autentificación de google.
   btn.addEventListener('click', () => {
+    document.querySelector(".container-nav").style.display = "none";
     createAccount();
   });
-  return containerCreate;
+   return containerCreate;
 };
+
