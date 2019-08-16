@@ -19,6 +19,11 @@ import {
     changeRouter
 } from './../../route.js';
 
+import {
+    changeRoutePost
+} from './../../route.js';
+
+
 
 
 /* CREATE POST */
@@ -97,13 +102,14 @@ export const realTimeRetriever = () => {
 
 /* RETRIEVE POST DETAILS ---MUESTRA DETALLES DE UN SOLO POST ----*/
 const showSinglePost = ()=>{
-    document.addEventListener('click', (event)=>{
+    document.querySelector('.ulPosts').addEventListener('click', (event)=>{
         let clickedElement = event.target;
         console.log(clickedElement);
         if(clickedElement.parentElement.className == 'post'){
            let postUid = clickedElement.parentElement.getAttribute('data-id');
            console.log('este es el postUid', postUid);
-           showPostFull(postUid);
+           changeRoutePost(`#/singlePost-${postUid}`);
+           
 
         }else if(clickedElement.className == 'editPostClass'){
             // aquí damos instrucciones para que se cargue un formulario pre-llenado
@@ -155,7 +161,7 @@ const orderPosts = (propertyToOrder) => {
 /********** Función para borrar posts de la BBDD *********/
 
 export const deletePost = () => {
-    window.addEventListener('click', (evt) => {
+    document.querySelector('.ulPosts').addEventListener('click', (evt) => {
         if (evt.target.className === 'cross') {
             evt.stopPropagation();
             let clickedElement = evt.target;

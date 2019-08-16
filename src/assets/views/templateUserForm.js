@@ -60,7 +60,7 @@ export const templateUserForm = () => {
     // evento del botón que llama a la autentificación de google.
     btn.addEventListener('click', (evt) => {
         createUserForm();
-
+    });
         return containerUserForm;
-    })
+    
 };

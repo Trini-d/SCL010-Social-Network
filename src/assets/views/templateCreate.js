@@ -15,6 +15,7 @@ export const templateCreate = () => {
                  
                   <label for="password">Contraseña</label>
                   <input id="password" type="password" placeholder="Ingresa tu contraseña">
+                  <p class="error", id="errorId"></p>
                   <button id="create" type="submit">Crear cuenta</button>
                   
                 </form>

@@ -8,7 +8,7 @@ export const showPostFull = (postUid) => {
                 author.setAttribute('class', 'postAuthorClass');
                 author.textContent = doc.data().autor;
                 let category = document.createElement('p');
-                category.setAttribute = ('class', 'postCategoryClass');
+                category.setAttribute('class', 'postCategoryClass');
                 category.textContent = doc.data().categoria;
                 let pContent = document.createElement('div');
                 pContent.setAttribute('class', 'pContentClass');
@@ -16,11 +16,13 @@ export const showPostFull = (postUid) => {
                 let publiDate = document.createElement('span');
                 publiDate.setAttribute('class', 'publiDClass');
                 publiDate.textContent = doc.data().fechaPublic;
-                sPostWrapper.appendChild(author);
                 sPostWrapper.appendChild(category);
+                sPostWrapper.appendChild(author);
                 sPostWrapper.appendChild(pContent);
                 sPostWrapper.appendChild(publiDate);
+                document.getElementById('root').innerHTML = '';
                 document.getElementById('root').appendChild(sPostWrapper);
+                
             }
         });
     });
