@@ -19,7 +19,37 @@
 
 <body>
 
-    <header class="header-fix" id="navBarPlace"></header>
+    <div class="header-fix" id="navBarPlace">
+        <header class="header-fix">
+            <div class="container logo-nav-container">
+                <a href="#" class="logo">MUSICLINK</a>
+                <span class="menu-icon" id="hamburguer"><img src="./assets/img/menu.png" width="40" height="40" class="btnMenu"></span>
+
+            </div>
+            <div class="subNav">
+                <nav class="navigation">
+                    <ul>
+                        <li><a href="#/userForm" class="loggedIn">Formulario Usuario</a></li>
+                        <li><a href="#/userProfile" class="loggedIn">Perfil Usuario</a></li>
+                        <li><a href="#/feed" class="loggedIn">Ver Feed</a></li>
+                        <li><a href="#/createPost" class="loggedIn">Crear una publicación</a></li>
+                        <li><a id="logOut" href="#/logout" class="loggedIn">Logout</a></li>
+                        <li><a href="#/login" class="btn btn-action loggedOut">Login</a></li>
+                        <li><a href="#/create" class="btn btn-secondary loggedOut">Registrarse</a></li>
+                    </ul>
+                    
+                </nav>
+            </div>
+        </header>
+    </div>
+
+    <main class="main">
+        <div><img src="./assets/img/fondo.png" width="100%" height="100%" class="banner loggedOut"></div>
+        <div class="container">
+
+
+        </div>
+    </main>
     <div id="temporalContent"></div>
     <div id="logOut"></div>
     <div id="root"></div>
@@ -28,7 +58,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p>Copyright @2019 Todos los derechos reservados.</p>
+            <p>Copyright The MusicLaboratoria Team @2019</p>
         </div>
     </footer>
 
@@ -76,4 +106,5 @@
     </script>
 
 </body>
+
 </html>

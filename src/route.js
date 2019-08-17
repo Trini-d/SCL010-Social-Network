@@ -33,11 +33,8 @@ import {
 } from './assets/js/retriveUserForm.js';
 
 import {
-  navBarLoggedIn,
-  navBarFirstTime
-} from './assets/views/navBarTemplate.js';
-
-
+  templateUserForm
+} from './assets/views/templateUserForm.js';
 
 
 /* changeRouter llama a la función que carga cada template */
@@ -46,10 +43,7 @@ export const changeRouter = (hash) => {
   if (hash === '') {
     return showTemplate('#/');
   }
-  if (hash === '#/out') {
-    return showTemplate(hash);
-  }
-
+ 
   if (hash === '#/create') {
     return showTemplate('#/create');
   }
@@ -98,16 +92,12 @@ export const showTemplate = (hash) => {
   const router = hash.substring(2);
   const containerRoot = document.getElementById('root');
   containerRoot.innerHTML = '';
-  const navBarRoot = document.getElementById('navBarPlace');
-  navBarRoot.innerHTML = '';
+ 
 
   // hacemos el match del hash utilizado y el template que queremos mostrar
   switch (router) {
     case '':
-        navBarRoot.appendChild(navBarLoggedIn());
-      break;
-    case 'out':
-        navBarRoot.appendChild(navBarFirstTime());
+        containerRoot.innerHTML = '';
       break;
     case 'login':
       containerRoot.appendChild(templateLogin());
@@ -115,7 +105,6 @@ export const showTemplate = (hash) => {
     case 'logout':
       logOutFn();
       break;
-
     case 'create':
       containerRoot.appendChild(templateCreate());
       break;

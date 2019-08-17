@@ -2,13 +2,18 @@ import {
   changeRouter
 } from './../../route.js';
 
+import {
+  navBarLoggedOrNot
+}from './../views/navBarTemplate.js';
+
+
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    changeRouter('');
     console.log('el usuario está logueado');
+    navBarLoggedOrNot(user);
   } else {
-    changeRouter('#/out');
-    console.log('el usuario ha salido');
+    console.log('el usuario no está logueado');
+    navBarLoggedOrNot(user);  
   }
 });
 

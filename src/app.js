@@ -4,6 +4,10 @@ import {
     initRouter
 } from './route.js';
 
+import {
+    hamburguerToggle
+}from './assets/views/navBarTemplate.js';
+
 
 let app = firebase.app();
 console.log("APP:", app);
@@ -15,4 +19,8 @@ const init = () => {
 };
 
 window.addEventListener('load', init);
+
+//función siempre presente que escucha el click en el menú hamburguesa
+
+hamburguerToggle();
 
