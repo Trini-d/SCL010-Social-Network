@@ -2,6 +2,18 @@ import {
   changeRouter
 } from './../../route.js';
 
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    changeRouter('');
+    console.log('el usuario está logueado');
+  } else {
+    changeRouter('#/out');
+    console.log('el usuario ha salido');
+  }
+});
+
+
+
 export const loginGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -38,23 +50,40 @@ export const createAccount = () => {
   firebase.auth().createUserWithEmailAndPassword(email, password).then(credentials => {
     console.log(credentials);
     document.querySelector('.login-box').remove();
-    changeRouter('#/feed');
+    changeRouter('');
 
   }).catch(error => {
+    console.log('error en createAccount', error.message);
     document.querySelector('#errorId').innerHTML = error.message;
   });
 
 };
 
+//Función que permite loguear al usuario ya registrado previamiente 
+export const logInFn = () => {
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  firebase.auth().signInWithEmailAndPassword(email, password).then(credentials => {
+    console.log(credentials.user);
+    document.querySelector('.login-box').remove();
+    changeRouter('');
+
+  }).catch(error => {
+    console.log('error en createAccount', error.message);
+    document.querySelector('#errorId').innerHTML = error.message;
+  });
+};
+
+
+// Función que permite LogOut del usuario
 export const logOutFn = () => {
-  document.querySelector('#logOut').addEventListener('click', (e) => {
     firebase.auth().signOut().then(() => {
       let outMsg = document.createElement('div');
       outMsg.setAttribute('class', 'popUp');
       document.getElementById('root').appendChild(outMsg);
-      //changeRouter('#/create');
+      //changeRouter('');
       outMsg.textContent = "Has salido de tu sesión, nos vemos pronto!";
     });
-  });
+ 
 
 };

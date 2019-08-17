@@ -1,6 +1,4 @@
 
-
-
 export const createUserForm = () => {
     var user = firebase.auth().currentUser;
     var userUid= user.uid;

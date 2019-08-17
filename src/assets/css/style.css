@@ -17,47 +17,134 @@ a:active {
     color: #fff;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  /* background: #000; */
-  background-size: cover;
-  font-family: ubuntu;
-  height: 100vh;
-
-}
-
 ul, li {
     list-style-type: none;
     text-decoration: none;
 }
 
-h1 {
-  color: #fff;
-  font-size: 64px;
-  letter-spacing: 2px;
-  margin-top: 80px;
-  text-align: center;
-}
+
+body{
+  font-family: ubuntu;
+  font-size: 1rem;
+  line-height: 1.6em;
+  margin:0;
+  padding: 0;
+  background: #000; 
+  background-size: cover;
+  height: 100vh;
+ }
+
+
 /* FIN DE REGLAS PARA LA PÁGINA EN GENERAL */
 
-/* REGLAS PARA BARRA DE NAVEGACIÓN */
-.navigation-bar {
-    display: flex;
-    justify-content: right;
-    
+
+
+/* REGLAS PARA HOME Y BARRA DE NAVEGACIÓN -- nat */
+
+
+ .container{
+  width: 85%;
+  max-width: 850PX;
+  margin: 0 auto;
+ }
+
+ .header-fix{
+  background: #222835;
+  color: #fbfbfb;
+  padding: 2rem 0;
+  /*position: fixed;*/
+  left: 0;
+  top: 0;
+  right: 0;
+ }
+
+ .header-fix a{
+  color: #fbfbfb;
+  text-decoration: none;
+ }
+
+ .logo-nav-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+ }
+
+ .logo{
+  letter-spacing: 15px;
+  font-size: 1.3em;
+ }
+
+ .menu-icon{
+  display:none;
+ }
+
+ .navigation-bar {
+  display: flex;
+  flex-direction: row;
+
 }
 
 .navigation-bar li {
-    line-height: 0.8em;
-    margin: 1%;
+  line-height: 0.8em;
+  margin: 1%;
 }
-@media only screen and (max-width: 768px){
+
+ .navigation ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+ }
+
+ .navigation ul li{
+  display: inline-block;
+ }
+
+ .navigation ul li a{
+  display: block;
+  padding: 0.1rem 0.5rem;
+  transition: all 0.4s linear;
+  border-radius: 5px;
+ }
+
+ .navigation ul li a:hover {
+  background: #4a4a4a;
+ }
+
+ .main{
+  padding-top: 10rem;
+ }
+
+ .subNav{
+  padding: 0.5rem 18rem;
+ }
+
+ .banner{
+  width: 100%;
+ }
+ 
+ .footer{
+      text-align: center;
+      width: 100%;
+      background: #222835;
+      color: #fbfbfb;
+      font-size: 0.8rem;
+      margin: 0;
+ }
+
+
+
+
+ /* media queries para barra de navegación */
+ 
+/*hasta 767px*/
+ 
+ @media only screen and (max-width: 767px){
+
   .container subNav{
-      padding: 0 2.5rem;
-  }
+    padding: 0 2.5rem;
 }
-@media only screen and (max-width: 767px){
+
   .menu-icon{
       display:block;
       cursor:pointer;
@@ -67,7 +154,7 @@ h1 {
       width:100%;
       margin:1rem;
   }
-  .navigation ul{
+  .navigation{
       display:none;
   }
   .navigation ul.show{
@@ -82,30 +169,72 @@ h1 {
       transition: all 0.4s linear;
       border-radius: 2px;
   }
-  .navigation ul li a:hover {
-      background: #4a4a4a;
+  .navigation li a:hover {
+      background: #4a4a4a
+ ;
   }
   .subNav{
       padding: 0.2rem 2rem;
+
+
   }
+  .container subNav{
+    padding: 0 2.5rem;
+}
+
+.menu-icon{
+  display:block;
+  cursor:pointer;
+  padding: 0.5rem 1rem;
+}
+.navigation{
+  width:100%;
+  margin:1rem;
+}
+.navigation ul{
+  display:none;
+}
+.navigation ul.show{
+  display:block;
+}
+.navigation ul li{
+  display: block;
+}
+.navigation ul li a{
+  display: block;
+  padding: 0.5rem 0;
+  transition: all 0.4s linear;
+  border-radius: 2px;
+}
+.navigation ul li a:hover {
+  background: #4a4a4a;
+}
+.subNav{
+  padding: 0.2rem 2rem;
+}
 
 }
 
+
+/*hasta 320px*/
 @media only screen and (max-width: 320px){
   .subNav{
-      padding: 0 20rem;
+      padding: 0 20rem;  
+    }
 
-  }
-} 
-@media only screen and (max-width: 1024px){
+   
+ }
+
+
+/*hasta 1024px ??? chequear esto*/
+ @media only screen and (max-width: 1024px){
   .subNav{
-      padding: 0.5rem 4.5rem;
+      padding: 0.5rem 4.5rem;  }
+ }
 
-  }
-}
 
-/* FIN DE REGLAS PARA HOME Y BARRA DE NAVEGACIÓN */
 
+ /* FIN DE REGLAS PARA HOME Y BARRA DE NAVEGACIÓN --nat  */
 
 
 
@@ -164,6 +293,9 @@ h1 {
   cursor: pointer;
 }
 /***** FIN DE REGLAS PARA EL LISTADO DE POSTS *****/
+
+
+
 
 /* REGLAS PARA FORMULARIO DE CREACIÓN DE POST */
 
@@ -229,6 +361,10 @@ button {
 
 /******** FIN DE REGLAS PARA FORMULARIO DE CREACIÓN DE POST *******/
 
+
+
+
+
 /* REGLAS PARA VER POST INDIVIDUAL */
 
 .singlePostClass{
@@ -260,6 +396,10 @@ color: #2b2d42;
 }
 /**** FIN DE REGLAS PARA VER POST INDIVIDUAL ****/
 
+
+
+
+
 /*REGLAS PARA EL POPUP DE LA CONFIRMACIÓN DE ELIMINACIÓN DE POST*/
 
 .popUp{
@@ -272,8 +412,8 @@ color: #2b2d42;
   padding: 4% 2%;
   z-index : 2;
   position: absolute;
-  top : 40vh;
-  left: 30vh; 
+  top : 50vh;
+  left: 50vh; 
 }
 
 #closeIt{
@@ -284,6 +424,10 @@ color: #2b2d42;
 
 
 /********FIN DE REGLAS PARA CONFIRMACIÓN DE ELIMINACIÓN DEL POST***********/
+
+
+
+
 
 
 /*REGLAS PARA REGISTER CON EMAIL Y PASSWORD*/
@@ -309,6 +453,15 @@ color: #2b2d42;
     box-sizing: border-box;
     padding: 70px 30px;
     border-radius: 15px;
+  }
+
+  
+  .register-box {
+    /* width: 320px;
+    height: 350px; */
+    background:  #19191a;
+    color: #f77f00;
+   
   }
   
   
@@ -370,6 +523,9 @@ color: #2b2d42;
     color: #fff;
   }
   
+
+
+
   /*REGLAS PARA FORMULARIO DE USUARIO*/
 
 #user-profile-form{
@@ -491,3 +647,5 @@ color: #2b2d42;
     transition: all .3s;
     font-size: 25px;
 }
+ 
+  /* FIN DE REGLAS PARA FORMULARIO DE USUARIO*/

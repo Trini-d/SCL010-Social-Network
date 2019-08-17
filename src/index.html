@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Music Link</title>
-
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
@@ -16,55 +15,31 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
+
+
 <body>
 
-    <header class="header-fix">
-        <div class="container logo-nav-container">
-            <!-- <a href="#" class="logo">MUSICLINK</a> -->
-            <span class="menu-icon"><img id="hamburguesa" src="./assets/img/menu.png" width="40" height="40" class="btnMenu"></span>
-            <nav class="navigation">
-                <ul class="navigationUl">
-                    <li><input type="search" placeholder="Buscar"></li>
-                    <li><a href="#"><img src="./assets/img/busqueda.png" width="15" height="15" class="btnBuscar"></a></li>
-                    <li><a href="#">Log in</a></li>
-                    <li><a href="#/login">Login</a></li>
-                    <li><a id="logOut" href="#/logout">Logout</a></li>
-                    <li><a href="#/create">Registrarse</a></li>
-                    <li><a href="#/userForm">Formulario Usuario</a></li>
-                    <li><a href="#/userProfile">Perfil Usuario</a></li>
-                    <li><a href="#/feed">Ver Feed</a></li>
-                    <li><a href="#/createPost">Crear una publicación</a></li>
-                </ul>
-            </nav>
-        </div>
-      
-        <!-- <main class="main">
-            <div><img src="./assets/img/fondo.jpg" width="100%" height="100%" class="banner"></div>
-            <div class="container">
-    
-                <div class="loginMenu">
-    
-                    <li><input id="txtEmail" type="email" placeholder="Email"></li>
-                    <li><input id="txtPassword" type="password" placeholder="Contraseña"></li>
-                    <li><button id="btnLogin" class="btn btn-action">Login</button>
-                        <button id="btnSignUp" class="btn btn-secondary">Registrarse</button></li>
-                    <li><button onClick="googleSignIn()">Accede con Google</button></li>
-                    <li><button id="btnLogout" class="btn btn-action hide">Logout</button></li>
-    
-    
-                </div>
-    
-            </div>
-        </main> -->
-    </header>
-    
-    
+    <header class="header-fix" id="navBarPlace"></header>
+    <div id="temporalContent"></div>
+    <div id="logOut"></div>
     <div id="root"></div>
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <p>Copyright @2019 Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+
     <script type="module" src="./app.js"></script>
 
 
+
     <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#config-web-app -->
+ https://firebase.google.com/docs/web/setup#config-web-app -->
     <script>
         //Esta es la configuración de firebase que nigma usa para hacer las pruebas en su consola de firebase
         //debe ser comentada o eliminada para el deploy final
@@ -98,17 +73,7 @@
         db.settings = ({
             timestampsInSnapshots: true
         });
-    </script>   
-     <script src="./login.js"></script>
-     <script>
-         loginFun()
-     </script>
-      <footer class="footer">
-        <div class="container">
-            <p>Copyright @2019 Todos los derechos reservados.</p>
-        </div>
-    </footer>
+    </script>
 
 </body>
-
 </html>

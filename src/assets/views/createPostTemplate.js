@@ -10,7 +10,7 @@ Vamos a crear únicamente las funciones que tienen que ver con "pintar" en el fr
      envelope.setAttribute('class', 'formWrapper');
      envelope.innerHTML = `<form class="contentForm" id="add-post-form">
        <!--En este input de autor el valor del nombre va a ser reemplazado por el nombre del usuario logueado-->
-       <input class="inputForm" type="text" name="author" placeholder="nombreDelUsuarioLogueado">
+       <input class="inputForm" type="text" name="author" placeholder="nombreDelUsuarioLogueado" required>
        <select class="inputForm" name="categories">
            <option class="inputForm" value="eventos">Eventos</option>
            <option class="inputForm" value="seminarios">Seminarios</option>

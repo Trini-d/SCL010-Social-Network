@@ -2,9 +2,10 @@ import {
   templateLogin
 } from './assets/views/templateLogin.js';
 
-import{
+import {
   logOutFn
-}from './assets/js/auth.js';
+} from './assets/js/auth.js';
+
 import {
   templateCreate
 } from './assets/views/templateCreate.js';
@@ -26,20 +27,28 @@ import {
   createEmptyList
 } from './assets/views/retrivePostsTemplate.js';
 
-import { 
-    retrieveProfile 
+
+import {
+  retrieveProfile
 } from './assets/js/retriveUserForm.js';
 
+import {
+  navBarLoggedIn,
+  navBarFirstTime
+} from './assets/views/navBarTemplate.js';
 
 
 
 
 /* changeRouter llama a la función que carga cada template */
 export const changeRouter = (hash) => {
-  // console.log(hash);
-  // if (hash === '') {
-  //   return showTemplate('#/create');
-  // }
+  console.log(hash);
+  if (hash === '') {
+    return showTemplate('#/');
+  }
+  if (hash === '#/out') {
+    return showTemplate(hash);
+  }
 
   if (hash === '#/create') {
     return showTemplate('#/create');
@@ -89,9 +98,17 @@ export const showTemplate = (hash) => {
   const router = hash.substring(2);
   const containerRoot = document.getElementById('root');
   containerRoot.innerHTML = '';
+  const navBarRoot = document.getElementById('navBarPlace');
+  navBarRoot.innerHTML = '';
 
   // hacemos el match del hash utilizado y el template que queremos mostrar
   switch (router) {
+    case '':
+        navBarRoot.appendChild(navBarLoggedIn());
+      break;
+    case 'out':
+        navBarRoot.appendChild(navBarFirstTime());
+      break;
     case 'login':
       containerRoot.appendChild(templateLogin());
       break;
