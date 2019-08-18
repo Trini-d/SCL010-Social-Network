@@ -22,7 +22,7 @@ export const deleteConfiTemplate = () => {
 
     confiWrapper.appendChild(confiDeletePopUp);
 
-    let placingAnchor = document.querySelector('.ulPosts');
+    let placingAnchor = document.querySelector('#temporalContent');
     placingAnchor.appendChild(confiWrapper);
    
     

@@ -4,10 +4,6 @@ import {
 } from './../views/retrivePostsTemplate.js';
 
 import {
-    showPostFull
-}from './../views/showSinglePostTemplate.js';
-
-import {
     deleteConfiTemplate
 } from './../views/deleteConfirmTemplate.js';
 
@@ -16,11 +12,12 @@ import {
 } from './../views/publicationSuccessTemplate.js';
 
 import {
-    changeRouter
-} from './../../route.js';
+    editPostTemplateFn
+} from './../views/editPostTemplate.js';
 
 import {
-    changeRoutePost
+    changeRoutePost,
+    changeRouter
 } from './../../route.js';
 
 
@@ -51,7 +48,9 @@ export const createPost = () => {
         //escuchamos cuando el usuario haga click a la "x" y le redirigimos al feed donde estará su post publicado
         document.querySelector('#closeIt').addEventListener('click', (event) => {
             document.querySelector('#successWrap').remove();
-            changeRouter('#/feed');
+            const containerRoot = document.getElementById('root');
+            containerRoot.innerHTML = '';
+            window.location.hash = '#/feed';
         });
     });
 };
@@ -85,8 +84,8 @@ export const realTimeRetriever = () => {
         let changes = snapshot.docChanges();
         changes.forEach(change => {
             console.log('esto es change de la funcion realTimeRet.', change);
-            console.log('esto es change.doc.data() de la funcion realTimeRet.',change.doc.data());
-            console.log('esto es change.doc.id de la funcion realTimeRet.',change.doc.id);
+            console.log('esto es change.doc.data() de la funcion realTimeRet.', change.doc.data());
+            console.log('esto es change.doc.id de la funcion realTimeRet.', change.doc.id);
             if (change.type === 'added') {
                 renderPostInTemplate(change.doc);
             } else if (change.type === 'removed') {
@@ -94,6 +93,9 @@ export const realTimeRetriever = () => {
                 // deletedPost.remove();
                 postList.removeChild(deletedPost);
 
+            }else if(change.type === 'modified'){
+                let postUid = document.querySelector('.singlePostClass').getAttribute('data-id');
+                changeRoutePost(`#/singlePost-${postUid}`);
             }
         });
     });
@@ -101,23 +103,23 @@ export const realTimeRetriever = () => {
 };
 
 /* RETRIEVE POST DETAILS ---MUESTRA DETALLES DE UN SOLO POST ----*/
-const showSinglePost = ()=>{
-    document.querySelector('.ulPosts').addEventListener('click', (event)=>{
+const showSinglePost = () => {
+    document.querySelector('.ulPosts').addEventListener('click', (event) => {
         let clickedElement = event.target;
-        console.log(clickedElement);
-        if(clickedElement.parentElement.className == 'post'){
-           let postUid = clickedElement.parentElement.getAttribute('data-id');
-           console.log('este es el postUid', postUid);
-           changeRoutePost(`#/singlePost-${postUid}`);
-           
+        console.log('este es el elemento específico del post donde ha clickeado: ', clickedElement);
+        if (clickedElement.className !== 'cross') {
+            let postUid = clickedElement.parentElement.getAttribute('data-id');
+            console.log('este es el postUid', postUid);
+            changeRoutePost(`#/singlePost-${postUid}`);
 
-        }else if(clickedElement.className == 'editPostClass'){
+
+        } else if (clickedElement.className == 'editPostClass') {
             // aquí damos instrucciones para que se cargue un formulario pre-llenado
             // con los valores actuales, el usuario puede modificar los campos y al
             // pulsar el botón "guardar cambios", se llama a una función que usa el
             // .update de firebase y reescribe el documento (objeto) con los valores
             // que consigue en este formulario de edición
-        }else{
+        } else {
             console.log('buscar el mensaje apropiado en caso de necesitarlo');
         }
 
@@ -155,12 +157,38 @@ const orderPosts = (propertyToOrder) => {
 
 /* UPDATE POST -- EDITAR UN SÓLO POST */
 
+//toma el id del post que está contenido en el hash
+export const retrieveInterestPost = () => {
+    let dirtyHash = window.location.hash;
+    let cleanedHash = dirtyHash.split('-')[1];
+    //crea el formulario prellenado con los datos de la publicación
+    editPostTemplateFn(cleanedHash);
+};
+
+
+
+export const updatePost = () => {
+    let editedForm = document.querySelector('#edit-post-form');
+    let postUid = editedForm.parentElement.getAttribute('data-id');
+    let editedCatIndex = editedForm.categories.selectedIndex;
+    console.log('este es el postUid que está recibiendo updatePost', postUid);
+    db.collection('posts').doc(postUid).update({
+        "autor": editedForm.author.value,
+        "categoria": editedForm.categories.options[editedCatIndex].value,
+        "contenido": editedForm.content.value,
+        "fechaPublic": editedForm.publicDate.value
+    });
+    window.location.hash = '#/feed';
+};
+
 
 /* DELETE POSTS -- ELIMINAR UN POST ESPECÍFICO */
 
 /********** Función para borrar posts de la BBDD *********/
 
+
 export const deletePost = () => {
+
     document.querySelector('.ulPosts').addEventListener('click', (evt) => {
         if (evt.target.className === 'cross') {
             evt.stopPropagation();
@@ -193,5 +221,39 @@ export const deletePost = () => {
                 }
             });
         }
+    });
+};
+
+/* FUNCIÓN QUE SUMA Y DA CUENTA DE LOS LIKES DE UNA PUBLICACIÓN */
+
+export const likeItFn = () => {
+    let postId = document.querySelector('.singlePostClass').getAttribute('data-id');
+    db.collection('posts').get().then((snapshot) => {
+        snapshot.docs.forEach(doc => {
+            if (`${doc.id}` == `${postId}`) {
+                let currentLikes = (doc.data().likes) + 1;
+                console.log(currentLikes);
+                db.collection('posts').doc(postId).update({
+                    "likes":currentLikes
+                });
+            } 
+        });
+    });
+};
+
+/* FUNCIÓN QUE RESTA Y DA CUENTA DE LOS LIKES DE UNA PUBLICACIÓN */
+
+export const dontLikeItFn = () => {
+    let postId = document.querySelector('.singlePostClass').getAttribute('data-id');
+    db.collection('posts').get().then((snapshot) => {
+        snapshot.docs.forEach(doc => {
+            if (`${doc.id}` == `${postId}`) {
+                let currentLikes = (doc.data().likes) - 1;
+                console.log(currentLikes);
+                db.collection('posts').doc(postId).update({
+                    "likes":currentLikes
+                });
+            } 
+        });
     });
 };

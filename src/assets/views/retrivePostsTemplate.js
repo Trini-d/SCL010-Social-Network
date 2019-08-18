@@ -20,14 +20,13 @@ export const renderPostInTemplate = (post) => {
     let content = document.createElement('span');
     let publicationDate = document.createElement('span');
     let automaticDate = document.createElement('span');
+    let likesLabel = document.createElement('span');
     let likes = document.createElement('span');
     //aquí debería haber una condición de si el usuario logueado y el post le pertenece, dar la opción 
     //de editarlo o eliminarlo
     let deleteEx = document.createElement('div');
     deleteEx.setAttribute('class', 'cross');
-    let editPost = document.createElement('span');
-    editPost.setAttribute('class', 'editPostClass');
-
+   
     /*ahora le agregamos el valor que va a ir en cada uno de los elementos */
     author.textContent = post.data().autor;
     category.textContent = post.data().categoria;
@@ -35,7 +34,7 @@ export const renderPostInTemplate = (post) => {
     publicationDate.textContent = post.data().fechaPublic;
     //automaticDate.textContent = post.data().
     deleteEx.textContent = 'x';
-    editPost.textContent = 'editar publicación';
+    likesLabel.textContent = 'Likes: ';
     likes.textContent = post.data().likes;
 
     /*inyectamos cada valor traído en la lista que le corresponde*/
@@ -43,10 +42,10 @@ export const renderPostInTemplate = (post) => {
     liElement.appendChild(category);
     liElement.appendChild(content);
     liElement.appendChild(publicationDate);
+    liElement.appendChild(likesLabel);
     liElement.appendChild(likes);
     liElement.appendChild(deleteEx);
-    liElement.appendChild(editPost);
-
+    
     /*ahora inyectamos lo creado en el elemento del DOM 
     que va a contener todo el resultado de la petición */
     //console.log(typeof (liElement));
