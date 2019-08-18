@@ -8,7 +8,7 @@ export const templateUserForm = () => {
                         
                         <form  id="user-profile-form">
                         <p>Información de Usuario</p>
-                            <input type="text" name="userName" placeholder="Tu nombre">
+                            <input type="text" name="userName" placeholder="Tu nombre" required>
                             <input class="align-left" type="number" name="age" placeholder="Tu edad">
                             <select class="hola align-right" name="gender">
                                 <option value="gender" hidden selected>Género</option>
