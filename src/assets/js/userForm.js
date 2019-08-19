@@ -1,3 +1,5 @@
+// función que toma los valores ingresados en el formulario y los guarda en la BBDD
+// CRUD ===== CREATE
 
 export const createUserForm = () => {
     var user = firebase.auth().currentUser;
@@ -33,6 +35,8 @@ export const createUserForm = () => {
          userForm.userName.value = '';
          userForm.age.value = '';
          userForm.city.value = '';
+         userForm.styles.value = '';
+         userForm.influences.value = '';
         
      });
 };

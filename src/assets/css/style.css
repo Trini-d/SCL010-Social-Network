@@ -29,7 +29,7 @@ body{
   line-height: 1.6em;
   margin:0;
   padding: 0;
-  background: #000; 
+  background:#222835; 
   background-size: cover;
   height: 100vh;
  }
@@ -84,99 +84,10 @@ body{
   display: flex;
   flex-direction: row-reverse;
 }
-@media only screen and (max-width: 768px){
-  .container subNav{
-      padding: 0 2.5rem;
-  }
-  button {
-    border: 0;
-    background: #f74902;
-    border-radius: 10px;
-    padding: 13px;
-    width: 100%;
-    box-shadow: -1px 0px 1px rgba(0, 0, 0, 0.1);
-    font-weight: bold;
-    font-family: ubuntu;
-    letter-spacing: 1px;
-    color: #edf2f4;
-    cursor: pointer;
-    margin: 0 auto;
-    transition: all;
-}
-.login-box {
-  display: flex;
-  flex-direction: column;
-  /* width: 320px;
-  height: 350px; */
-  background:  #f77f00;
-  color: #fff;
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  box-sizing: border-box;
-  padding: 70px 30px;
-  border-radius: 15px;
-} 
-.btnMenu{
-  margin-left: 6rem;
-
+.logoImg{
+  width: 160px;
 }
 
-}
-@media only screen and (max-width: 767px){
-  .menu-icon{
-      display:block;
-      cursor:pointer;
-      padding: 0.5rem 1rem;
-  }
-  .navigation{
-      width:100%;
-      margin:1rem;
-  }
-  .navigation ul{
-      display:none;
-  }
-  .navigation ul.show{
-      display:block;
-  }
-  .navigation ul li{
-      display: block;
-  }
-  .navigation ul li a{
-      display: block;
-      padding: 0.5rem 0;
-      transition: all 0.4s linear;
-      border-radius: 2px;
-  }
-  .navigation ul li a:hover {
-      background: #4a4a4a;
-  }
-  .subNav{
-      padding: 0.2rem 2rem;
-  }
-  .register-box {
-    width: 280px;
-    /* height: 350px; */
-    background:  #19191a;
-    color: #f77f00;
-   
-  }
-
-}
-
-@media only screen and (max-width: 320px){
-  .subNav{
-      padding: 0 20rem;
-
-  }
-} 
-@media only screen and (max-width: 1024px){
-  .subNav{
-      padding: 0.5rem 2rem;
-
-  }
-}
  /* FIN DE REGLAS PARA HOME Y BARRA DE NAVEGACIÓN --nat  */
 
 
@@ -247,7 +158,20 @@ body{
     justify-content: space-around;
     align-items: center;
     background: #999;
-    padding: 4% 2%;
+    padding: 4% 2%;  
+    flex-direction: column;
+    /* width: 320px;
+    height: 350px; */
+    background:  #f77f00;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border-radius: 15px;
+    margin-top: 10%;
 
 }
 
@@ -317,8 +241,23 @@ justify-content: center;
 align-items: center;
 background: #edf2f4;
 color: #2b2d42;
+display: flex;
+flex-direction: column;
+/* width: 320px;
+height: 350px; */
+color: #2b2d42;
+top: 50%;
+left: 50%;
+position: absolute;
+transform: translate(-50%, -50%);
+box-sizing: border-box;
+padding: 70px 30px;
+border-radius: 15px;
 
 
+}
+.pContentClass{
+  text-align: justify;
 }
 
 .postAuthorClass{
@@ -335,6 +274,7 @@ color: #2b2d42;
   border-radius: 6%;
   padding: 0.9%;
   width: 10%;
+  display: inline-table;
   
 }
 
@@ -466,7 +406,7 @@ color: #2b2d42;
     /* width: 320px;
     height: 350px; */
     background:  #f77f00;
-    color: #fff;
+    color: #2b2d42;
     top: 50%;
     left: 50%;
     position: absolute;
@@ -476,16 +416,6 @@ color: #2b2d42;
     border-radius: 15px;
   }
 
-  
-  .register-box {
-    width: 350px;
-    /* height: 350px; */
-    background:  #19191a;
-    color: #f77f00;
-   
-  }
-  
-  
   .login-box h1 {
     margin: 0;
     padding: 0 0 20px;
@@ -511,17 +441,16 @@ color: #2b2d42;
     background: transparent;
     outline: none;
    
-    color: #fff;
-    font-size: 16px;
+    color: #2b2d42;
+    font-size: 14px;
   }
   
   .login-box button[type="submit"] {
     border: none;
     outline: none;
-    
     background: #f74902;
     color: #edf2f4;
-    font-size: 18px;
+    font-size: 14px;
     border-radius: 20px;
     width: 100%;
     
@@ -628,6 +557,9 @@ color: #2b2d42;
     float:left;
     width: 49%;
 }
+#userFormText{
+  font-size: 15px !important;
+}
 
 /*REGLAS PARA PERFIL DE USUARIO*/
 .containerProfile{
@@ -635,7 +567,7 @@ color: #2b2d42;
   min-height: 600px;
   margin: auto;
   box-shadow: 0px 8px 60px -10px rgba(13,28,39,0.6);
-  background: #d80032;
+  background: #f77f00;
   border-radius: 12px;
   max-width: 700px;
   position: relative;
@@ -668,5 +600,8 @@ color: #2b2d42;
     transition: all .3s;
     font-size: 25px;
 }
+
  
   /* FIN DE REGLAS PARA FORMULARIO DE USUARIO*/
+
+  

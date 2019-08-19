@@ -29,10 +29,8 @@ export const loginGoogle = () => {
       var token = result.credential.accessToken;
       // The signed-in user info.
       var user = result.user;
-      console.log("FUNCIONO");
-      console.log("USER COMO VIENE", user);
-      user.favoriteBand = "red hot chilli peppers";
-      console.log("USER MODIFICADO", user);
+      
+      window.location.hash = "#/userForm";
       // ...
     }).catch(function (error) {
       console.log("ERROR:", error);
@@ -54,8 +52,7 @@ export const createAccount = () => {
 
   firebase.auth().createUserWithEmailAndPassword(email, password).then(credentials => {
     console.log(credentials);
-    document.querySelector('.login-box').remove();
-    changeRouter('');
+    window.location.hash = '#/userForm';
 
   }).catch(error => {
     console.log('error en createAccount', error.message);
@@ -72,8 +69,7 @@ export const logInFn = () => {
     console.log(credentials.user);
     document.querySelector('.login-box').remove();
     changeRouter('');
-
-  }).catch(error => {
+    }).catch(error => {
     console.log('error en createAccount', error.message);
     document.querySelector('#errorId').innerHTML = error.message;
   });

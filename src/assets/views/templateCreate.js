@@ -1,5 +1,6 @@
 import {
-  createAccount
+  createAccount,
+  loginGoogle
 } from './../js/auth.js';
 
 
@@ -9,7 +10,7 @@ export const templateCreate = () => {
   const containerCreate = document.createElement('div');
   // creamos el contenido del login
   const contentCreate = `
-          <div class="login-box register-box">
+          <div class="login-box">
                 <h1>Regístrate aquí</h1>
                 <form>
                   <label for="Email">Email</label>
@@ -25,18 +26,14 @@ export const templateCreate = () => {
                 </form>
           </div>
                             `;
-  // pasar el contenido al div
 
   containerCreate.innerHTML = contentCreate;
-  document.getElementById('root').appendChild(containerCreate);
-  // le pido que busque el id del boton dentro del div creado
-  const btn = containerCreate.querySelector('#create');
-
-
-  // evento del botón que llama a la autentificación de google.
-  btn.addEventListener('click', () => {
-    // document.querySelector(".container-nav").style.display = "none";
-    createAccount();
+  containerCreate.addEventListener('click',(event) =>{
+    if (event.target.id === 'create'){
+      createAccount();
+    } else if (event.target.id === 'createWithGoogle'){
+      loginGoogle();
+    }
   });
   return containerCreate;
 };

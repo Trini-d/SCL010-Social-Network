@@ -1,29 +1,29 @@
-[debug] [2019-08-18T22:38:24.203Z] ----------------------------------------------------------------------
-[debug] [2019-08-18T22:38:24.206Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
-[debug] [2019-08-18T22:38:24.207Z] CLI Version:   7.2.2
-[debug] [2019-08-18T22:38:24.207Z] Platform:      darwin
-[debug] [2019-08-18T22:38:24.207Z] Node Version:  v10.16.0
-[debug] [2019-08-18T22:38:24.208Z] Time:          Sun Aug 18 2019 18:38:24 GMT-0400 (GMT-04:00)
-[debug] [2019-08-18T22:38:24.208Z] ----------------------------------------------------------------------
+[debug] [2019-08-19T07:39:59.000Z] ----------------------------------------------------------------------
+[debug] [2019-08-19T07:39:59.003Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2019-08-19T07:39:59.003Z] CLI Version:   7.2.2
+[debug] [2019-08-19T07:39:59.003Z] Platform:      darwin
+[debug] [2019-08-19T07:39:59.003Z] Node Version:  v10.16.0
+[debug] [2019-08-19T07:39:59.005Z] Time:          Mon Aug 19 2019 03:39:59 GMT-0400 (GMT-04:00)
+[debug] [2019-08-19T07:39:59.005Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2019-08-18T22:38:24.224Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2019-08-18T22:38:24.226Z] > authorizing via signed-in user
-[debug] [2019-08-18T22:38:24.226Z] [iam] checking project social-network-ee6ec for permissions ["firebase.projects.get"]
-[debug] [2019-08-18T22:38:24.230Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2019-08-18T22:38:24.230Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+[debug] [2019-08-19T07:39:59.021Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-19T07:39:59.022Z] > authorizing via signed-in user
+[debug] [2019-08-19T07:39:59.022Z] [iam] checking project social-network-ee6ec for permissions ["firebase.projects.get"]
+[debug] [2019-08-19T07:39:59.024Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-08-19T07:39:59.024Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
  <request body omitted>
-[debug] [2019-08-18T22:38:24.553Z] <<< HTTP RESPONSE 200
-[debug] [2019-08-18T22:38:24.659Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/social-network-ee6ec:testIamPermissions  
+[debug] [2019-08-19T07:39:59.171Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-19T07:39:59.317Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/social-network-ee6ec:testIamPermissions  
 
-[debug] [2019-08-18T22:38:25.791Z] <<< HTTP RESPONSE 200
-[debug] [2019-08-18T22:38:25.793Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-ee6ec  
+[debug] [2019-08-19T07:40:00.371Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-19T07:40:00.374Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-ee6ec  
  
-[debug] [2019-08-18T22:38:26.950Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-19T07:40:01.539Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from '/Users/trini/Desktop/Proyecto-Social-Network/SCL010-Social-Network'...
 [info] 
-[debug] [2019-08-18T22:38:26.953Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-ee6ec/webApps/-/config  
+[debug] [2019-08-19T07:40:01.542Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-ee6ec/webApps/-/config  
  
-[debug] [2019-08-18T22:38:28.138Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-19T07:40:02.909Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5000

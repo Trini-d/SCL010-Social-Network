@@ -17,9 +17,9 @@ export const templateLogin = () => {
                   <label for="password">Contraseña</label>
                   <input id="password" type="password" placeholder="Ingresa tu contraseña">
                   <p class="error", id="errorId"></p>   
-                  <button id="loginE">Login con Email</button>
+                  <button type="submit" id="loginE">Login con Email</button>
           </p>O quizá prefieras...</p>
-          <button id="login">Login con tu cuenta de Google</button>
+          <button type="submit" id="login">Login con tu cuenta de Google</button>
                 </form>
           </div> `;
 
@@ -37,7 +37,7 @@ export const templateLogin = () => {
     }else{
       console.log('ha ocurrido un error en el logueo');
     }
-
+    
   });
   return containerLogin;
 };

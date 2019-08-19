@@ -1,4 +1,4 @@
-
+/********** Función que hace render de los resultados para mostrarlos en el template ********/
 export const renderProfile = (profile) => {
     let containerProfile = document.createElement('div');
     containerProfile.setAttribute('class', 'containerProfile');
@@ -63,6 +63,9 @@ export const renderProfile = (profile) => {
 };
 
 
+/* RETRIEVE PROFILE  **esta función solamente
+ consulta por toda la colección en la BBDD y para cada elemento que trae
+ le hace "render" en el front-end gracias a la función renderProfile() */
 export const retrieveProfile = () => {
   firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
