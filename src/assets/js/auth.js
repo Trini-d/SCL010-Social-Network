@@ -13,6 +13,7 @@ firebase.auth().onAuthStateChanged((user) => {
       document.getElementById('messages').innerHTML = '';
       navBarLoggedOrNot(user);
     } else {
+      sendVerificationEmail();
       firebase.auth().signOut().then(() => {
         customMsgs('Te hemos enviado un email de confirmación');
         
