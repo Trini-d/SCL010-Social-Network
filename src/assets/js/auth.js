@@ -5,6 +5,7 @@ import {
 import {
   navBarLoggedOrNot
 } from './../views/navBarTemplate.js';
+import { createUserForm } from './userForm.js';
 
 
 firebase.auth().onAuthStateChanged((user) => {
@@ -92,6 +93,7 @@ export const logInFn = () => {
   let password = document.getElementById("password").value;
   firebase.auth().signInWithEmailAndPassword(email, password).then(credentials => {
     console.log(credentials.user);
+    // if(createUserForm.)
     
     window.location.hash = "#/feed";
     }).catch(error => {

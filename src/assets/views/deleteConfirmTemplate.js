@@ -2,7 +2,7 @@ export const deleteConfiTemplate = () => {
     let confiWrapper = document.createElement('div');
     confiWrapper.setAttribute('id', 'confiWrap');
     let confiDeletePopUp = document.createElement('div');
-    confiDeletePopUp.setAttribute('class', 'popUp');
+    confiDeletePopUp.setAttribute('class', 'eliminarPost');
     let message = document.createElement('p');
     message.textContent = '¿Confirma que desea eliminar el post seleccionado?';
     let exPointer = document.createElement('button');

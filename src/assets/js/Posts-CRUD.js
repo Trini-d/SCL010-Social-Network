@@ -199,7 +199,7 @@ export const deletePost = () => {
             console.log('postIdClicked is alive and is ', postIdClicked);
             // btnClicked();
             // return postIdClicked;
-            document.querySelector('.popUp').addEventListener('click', (e) => {
+            document.querySelector('.eliminarPost').addEventListener('click', (e) => {
                 console.log(e.target);
                 const btn = e.target.id;
                 if (e.target.id == "deleteEx" || e.target.id == "regreted") {
@@ -207,14 +207,14 @@ export const deletePost = () => {
                     if (btn == 'deleteEx') {
                         console.log('ha hecho click en deleteEx');
                         db.collection('posts').doc(postIdClicked).delete();
-                        let popUp = document.querySelector('.popUp');
-                        popUp.remove();
+                        let eliminarPost = document.querySelector('.eliminarPost');
+                        eliminarPost.remove();
                         //document.querySelector('#confiWrap').removeChild('.popUp');
                     } else if (btn == 'regreted') {
                         //let daddy = document.querySelector('#confiWrap');
                         //daddy.removeChild(daddy.firstChild);
-                        let popUp = document.querySelector('.popUp');
-                        popUp.remove();
+                        let eliminarPost = document.querySelector('.eliminarPost');
+                        eliminarPost.remove();
                     } else {
                         console.log('ha ocurrido un error');
                     }
