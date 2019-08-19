@@ -88,6 +88,102 @@ body{
   width: 160px;
 }
 
+@media only screen and (max-width: 768px){
+  .container subNav{
+      padding: 0 2.5rem;
+  }
+  button {
+    border: 0;
+    background: #f74902;
+    border-radius: 10px;
+    padding: 13px;
+    width: 100%;
+    box-shadow: -1px 0px 1px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    font-family: ubuntu;
+    letter-spacing: 1px;
+    color: #edf2f4;
+    cursor: pointer;
+    margin: 0 auto;
+    transition: all;
+}
+.login-box {
+  display: flex;
+  flex-direction: column;
+  /* width: 320px;
+  height: 350px; */
+  background:  #f77f00;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+  border-radius: 15px;
+} 
+.btnMenu{
+  margin-left: 6rem;
+
+}
+
+}
+@media only screen and (max-width: 767px){
+  .menu-icon{
+      display:block;
+      cursor:pointer;
+      padding: 0.5rem 1rem;
+  }
+  .navigation{
+      width:100%;
+      margin:1rem;
+  }
+  .navigation ul{
+      display:none;
+  }
+  .navigation ul.show{
+      display:block;
+  }
+  .navigation ul li{
+      display: block;
+  }
+  .navigation ul li a{
+      display: block;
+      padding: 0.5rem 0;
+      transition: all 0.4s linear;
+      border-radius: 2px;
+  }
+  .navigation ul li a:hover {
+      background: #4a4a4a;
+  }
+  .subNav{
+      padding: 0.2rem 2rem;
+  }
+  .register-box {
+    width: 280px;
+    /* height: 350px; */
+    background:  #19191a;
+    color: #f77f00;
+
+  }
+
+.logoImg{
+  width: 160px;
+}
+
+@media only screen and (max-width: 320px){
+  .subNav{
+      padding: 0 20rem;
+
+  }
+} 
+@media only screen and (max-width: 1024px){
+  .subNav{
+      padding: 0.5rem 2rem;
+
+  }
+}
+
  /* FIN DE REGLAS PARA HOME Y BARRA DE NAVEGACIÓN --nat  */
 
 
