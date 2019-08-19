@@ -91,7 +91,9 @@ export const changeRoutePost = (hash) => {
 export const showTemplate = (hash) => {
   const router = hash.substring(2);
   const containerRoot = document.getElementById('root');
-  containerRoot.innerHTML = '';
+  containerRoot.innerHTML = ''; 
+  const containerMsg = document.getElementById('messages');
+  containerMsg.innerHTML = '';
  
 
   // hacemos el match del hash utilizado y el template que queremos mostrar
