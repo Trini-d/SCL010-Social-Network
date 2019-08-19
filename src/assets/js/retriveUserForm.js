@@ -64,28 +64,25 @@ export const renderProfile = (profile) => {
 
 
 export const retrieveProfile = () => {
-        firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            console.log("USER id:", user.uid);
-            var userLoggedId = user.uid;
-            console.log(userLoggedId);
-            db.collection('userForm').where(`userUid`, `==` , `${userLoggedId}`).get()
-                .then((snapshot) => {
-                console.log(snapshot.docs);
-                snapshot.docs.forEach(profile => {
-                    return renderProfile(profile);
-                });
-            });
-
-          // User is signed in.
-        } else {
-            console.log("No hay usuario logeado");
-          // No user is signed in.
-        }
+  firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+      console.log("USER id:", user.uid);
+      var userLoggedId = user.uid;
+      console.log(userLoggedId);
+      db.collection('userForm').where(`userUid`, `==` , `${userLoggedId}`).get()
+          .then((snapshot) => {
+          console.log(snapshot.docs);
+          snapshot.docs.forEach(profile => {
+              return renderProfile(profile);
+          });
       });
+    // User is signed in.
+  } else {
+      console.log("No hay usuario logeado");
+    // No user is signed in.
+  }
+});
 };
-
-
 
 
 

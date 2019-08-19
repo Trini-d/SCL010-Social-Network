@@ -44,6 +44,7 @@ body{
 .menu-icon{
   display:none;
 }
+
 .navigation ul{
   margin: 0;
   padding: 0;
@@ -62,10 +63,10 @@ body{
   background: #4a4a4a;
 }
 .main{
-  padding-top: 10rem;
+  padding-top: 3rem;
 }
 .subNav{
-  padding: 0.5rem 18rem;
+  padding: 0.5rem 3rem;
 }
 .banner{
   width: 100%;
@@ -79,10 +80,49 @@ body{
       font-size: 0.8rem;
       margin: 0;
 }
+#navBarPlace{
+  display: flex;
+  flex-direction: row-reverse;
+}
 @media only screen and (max-width: 768px){
   .container subNav{
       padding: 0 2.5rem;
   }
+  button {
+    border: 0;
+    background: #f74902;
+    border-radius: 10px;
+    padding: 13px;
+    width: 100%;
+    box-shadow: -1px 0px 1px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    font-family: ubuntu;
+    letter-spacing: 1px;
+    color: #edf2f4;
+    cursor: pointer;
+    margin: 0 auto;
+    transition: all;
+}
+.login-box {
+  display: flex;
+  flex-direction: column;
+  /* width: 320px;
+  height: 350px; */
+  background:  #f77f00;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+  border-radius: 15px;
+} 
+.btnMenu{
+  margin-left: 6rem;
+
+}
+
 }
 @media only screen and (max-width: 767px){
   .menu-icon{
@@ -115,6 +155,13 @@ body{
   .subNav{
       padding: 0.2rem 2rem;
   }
+  .register-box {
+    width: 280px;
+    /* height: 350px; */
+    background:  #19191a;
+    color: #f77f00;
+   
+  }
 
 }
 
@@ -126,7 +173,7 @@ body{
 } 
 @media only screen and (max-width: 1024px){
   .subNav{
-      padding: 0.5rem 4.5rem;
+      padding: 0.5rem 2rem;
 
   }
 }
@@ -431,8 +478,8 @@ color: #2b2d42;
 
   
   .register-box {
-    /* width: 320px;
-    height: 350px; */
+    width: 350px;
+    /* height: 350px; */
     background:  #19191a;
     color: #f77f00;
    
@@ -463,7 +510,7 @@ color: #2b2d42;
     border-bottom: 1px solid #fff;
     background: transparent;
     outline: none;
-    height: 40px;
+   
     color: #fff;
     font-size: 16px;
   }
@@ -471,13 +518,13 @@ color: #2b2d42;
   .login-box button[type="submit"] {
     border: none;
     outline: none;
-    height: 40px;
+    
     background: #f74902;
     color: #edf2f4;
     font-size: 18px;
     border-radius: 20px;
     width: 100%;
-    margin-bottom: 20px;
+    
   }
   
   .login-box button[type="submit"]:hover {
