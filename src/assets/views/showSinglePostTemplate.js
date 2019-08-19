@@ -31,11 +31,14 @@ export const showPostFull = (postUid) => {
                 let editBtn = document.createElement('button');
                 editBtn.setAttribute('class', 'editPostBtn');
                 editBtn.textContent = 'Editar Publicación';
-                let thumbsUp = document.createElement('div');
+                let backToFeedBtn = document.createElement('button');
+                backToFeedBtn.setAttribute('class', 'toFeedBtn');
+                backToFeedBtn.textContent = 'Volver al Muro';
+                let thumbsUp = document.createElement('button');
                 thumbsUp.setAttribute('class', 'thumbsUpClass');
                 thumbsUp.setAttribute('id', 'likeIt');
                 thumbsUp.textContent = 'Me gusta';
-                let thumbsDown = document.createElement('div');
+                let thumbsDown = document.createElement('button');
                 thumbsDown.setAttribute('class', 'thumbsDownClass');
                 thumbsDown.setAttribute('id', 'dontLikeIt');
                 thumbsDown.textContent = 'Ya no me gusta';
@@ -46,6 +49,7 @@ export const showPostFull = (postUid) => {
                 sPostWrapper.appendChild(likesCountLabel);
                 sPostWrapper.appendChild(likesCount);
                 sPostWrapper.appendChild(editBtn);
+                sPostWrapper.appendChild(backToFeedBtn);
                 sPostWrapper.appendChild(thumbsUp);
                 sPostWrapper.appendChild(thumbsDown);
                 document.getElementById('root').innerHTML = '';
@@ -54,6 +58,10 @@ export const showPostFull = (postUid) => {
                     console.log('recibe el click en el boton editar');
                     document.getElementById('root').innerHTML = '';
                     console.log(retrieveInterestPost());
+                });
+                backToFeedBtn.addEventListener('click', (event) => {
+                    console.log('click en volver al feed');
+                    window.location.hash = '#/feed';
                 });
                 thumbsUp.addEventListener('click', ()=>{
                     console.log('thumbsUp recibe el click');

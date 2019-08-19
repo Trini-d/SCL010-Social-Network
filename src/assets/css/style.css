@@ -92,6 +92,7 @@ body{
   .container subNav{
       padding: 0 2.5rem;
   }
+  
   button {
     border: 0;
     background: #f74902;
@@ -171,6 +172,9 @@ body{
   width: 160px;
 }
 }
+
+}
+
 @media only screen and (max-width: 320px){
   .subNav{
       padding: 0 20rem;
@@ -199,18 +203,20 @@ body{
 }
 
 .ulPosts li {
+    display: flex;
+    flex-direction: column;
     padding: 20px;
     background: #edf2f4;
     font-size: 20px;
     color: #2b2d42;
     position: relative;
     border-bottom: 1px solid #f77f00;
-    height: 8em;
 }
 
 .ulPosts li:nth-child(even) {
     padding: 20px;
-    background: #8d99ae;
+    background: #edf2f4;
+    border: 1px solid #f77f00;
 }
 
 .ulPosts li span {
@@ -220,7 +226,7 @@ body{
 .ulPosts li span:nth-child(2) {
     font-size: 16px;
     margin-top: 6px;
-    color: #edf2f4;
+    color: #19191a;
 }
 
 .ulPosts li div {
@@ -331,14 +337,12 @@ button {
 /* REGLAS PARA VER POST INDIVIDUAL */
 
 .singlePostClass{
+  margin-top: 30vh;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 background: #edf2f4;
-color: #2b2d42;
-display: flex;
-flex-direction: column;
 color: #2b2d42;
 top: 50%;
 left: 50%;
@@ -379,10 +383,8 @@ border-radius: 15px;
   color: #f77f00;
   background-color: #19191a;
   border: 2px solid #f77f00;
-  width: 10vw;
   transition: all;
   transition-duration: 0.5s;
-  margin-left: 80vw;
 }
 
 .editPostBtn:hover{
@@ -392,20 +394,21 @@ border-radius: 15px;
   border: 2px solid #fff;
 }
 
+.toFeedBtn{
+  margin-top: 3%;
+}
+
 .thumbsUpClass{
   display: flex;
   align-items: center;
   justify-content: center;
   color: #19191a;
   font-weight: bold;
+  margin-top: 3%;
   background-color: #f77f00;
   cursor: pointer;
-  width: 8vw;
-  height: 8vw;
-  padding: 0.5%;
   margin-bottom: 1%;
   text-align: center;
-  border-radius: 50%;
   transition: all;
   transition-duration: 0.5s;
 
@@ -429,12 +432,9 @@ border-radius: 15px;
   font-weight: bold;
   background-color: #19191a;
   cursor: pointer;
-  width: 8vw;
-  height: 8vw;
-  padding: 0.5%;
   margin-bottom: 1%;
   text-align: center;
-  border-radius: 50%;
+
   transition: all;
   transition-duration: 0.5s;
 
@@ -505,7 +505,7 @@ border-radius: 15px;
 }
 
 
-  .login-box {
+.login-box {
     display: flex;
     flex-direction: column;
     /* width: 320px;
@@ -706,4 +706,3 @@ border-radius: 15px;
 
   /* FIN DE REGLAS PARA FORMULARIO DE USUARIO*/
 
-  
