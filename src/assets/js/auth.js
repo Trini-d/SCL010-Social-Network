@@ -4,16 +4,26 @@ import {
 
 import {
   navBarLoggedOrNot
-}from './../views/navBarTemplate.js';
+} from './../views/navBarTemplate.js';
 
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
+    if (user.emailVerified) {
+      document.getElementById('messages').innerHTML = '';
+      navBarLoggedOrNot(user);
+    } else {
+      firebase.auth().signOut().then(() => {
+        customMsgs('Te hemos enviado un email de confirmación');
+        
+      });
+    }
     console.log('el usuario está logueado');
-    navBarLoggedOrNot(user);
+    console.log('y estas son sus credenciales', user);
+
   } else {
     console.log('el usuario no está logueado');
-    navBarLoggedOrNot(user);  
+    navBarLoggedOrNot(user);
   }
 });
 
@@ -54,12 +64,25 @@ export const createAccount = () => {
 
   firebase.auth().createUserWithEmailAndPassword(email, password).then(credentials => {
     console.log(credentials);
+    sendVerificationEmail();
     document.querySelector('.login-box').remove();
     changeRouter('');
 
   }).catch(error => {
     console.log('error en createAccount', error.message);
     document.querySelector('#errorId').innerHTML = error.message;
+  });
+
+};
+
+const sendVerificationEmail = () => {
+
+  let user = firebase.auth().currentUser;
+
+  user.sendEmailVerification().then(function () {
+    console.log('el email fue enviado');
+  }).catch(function (error) {
+    console.log('error en enviar email de verificacion', error.message);
   });
 
 };
@@ -82,13 +105,17 @@ export const logInFn = () => {
 
 // Función que permite LogOut del usuario
 export const logOutFn = () => {
-    firebase.auth().signOut().then(() => {
-      let outMsg = document.createElement('div');
-      outMsg.setAttribute('class', 'popUp');
-      document.getElementById('root').appendChild(outMsg);
-      //changeRouter('');
-      outMsg.textContent = "Has salido de tu sesión, nos vemos pronto!";
-    });
- 
+  firebase.auth().signOut().then(() => {
+    customMsgs('Has salido de tu sesión, nos vemos pronto!');
+    
+  });
 
+
+};
+
+const customMsgs = (msgToUser) => {
+  let outMsg = document.createElement('h3');
+  outMsg.textContent = `${msgToUser}`;
+  outMsg.setAttribute('class', 'popUp');
+  document.getElementById('messages').appendChild(outMsg);
 };
